@@ -283,10 +283,10 @@ MonoBehaviour:
     type: 3}
   m_doorTile: {fileID: 4458504087829735598, guid: f216f55f1cc0cb548add540ce4686cff,
     type: 3}
-  m_numberOfLavaHoles: {x: 40, y: 50}
+  m_numberOfLavaHoles: {x: 10, y: 15}
   m_sizeOfLavaHoles: {x: 2, y: 4}
   m_numberOfSpikesSpot: {x: 1, y: 2}
-  m_sizeOfSpikesSpot: {x: 0, y: 2}
+  m_sizeOfSpikesSpot: {x: 4, y: 6}
   m_numberOfVoidHoles: {x: 1, y: 2}
   m_sizeOfVoidHoles: {x: 2, y: 4}
 --- !u!4 &1075092471
