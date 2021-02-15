@@ -273,8 +273,20 @@ MonoBehaviour:
   m_tileSize: 1
   m_groundTile: {fileID: 6647688609201886264, guid: a2f0bf3c67d4b61438d272331fedc155,
     type: 3}
+  m_lavaTile: {fileID: 6030416453369461478, guid: 3b371dec31aed5845ae79c9b3925d90e,
+    type: 3}
+  m_spikeTile: {fileID: 8426109967200256924, guid: 109b93ae1046d64458f5f35da6454efc,
+    type: 3}
+  m_voidTile: {fileID: 2613993750203369350, guid: df46854f2f57f5548b0852a3b3c5646b,
+    type: 3}
   m_wallTile: {fileID: 302702717563650006, guid: 475d974c342500546a4a12ded9abfbe4,
     type: 3}
+  m_numberOfLavaHoles: {x: 1, y: 3}
+  m_sizeOfLavaHoles: {x: 2, y: 4}
+  m_numberOfSpikesSpot: {x: 1, y: 2}
+  m_sizeOfSpikesSpot: {x: 0, y: 2}
+  m_numberOfVoidHoles: {x: 1, y: 2}
+  m_sizeOfVoidHoles: {x: 2, y: 4}
 --- !u!4 &1075092471
 Transform:
   m_ObjectHideFlags: 0
@@ -462,3 +474,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &433137261248993042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862855159726980298, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613993750203369350, guid: df46854f2f57f5548b0852a3b3c5646b,
+        type: 3}
+      propertyPath: m_Name
+      value: VoidTestTile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df46854f2f57f5548b0852a3b3c5646b, type: 3}
