@@ -34,6 +34,8 @@ namespace ElementaryMagicians.Dunjeon
         private GameObject m_voidTile = null;
         [SerializeField]
         private GameObject m_wallTile = null;
+        [SerializeField]
+        private GameObject m_doorTile = null;
 
         [Header("Obstacles")]
         [SerializeField]
@@ -85,21 +87,22 @@ namespace ElementaryMagicians.Dunjeon
             int lastWidth = -1;
             for(int i = 0; i < m_roomLength; ++i)
             {
-                float currentZ = m_enterDoors.transform.position.z + (i + m_tileSize) * m_tileSize;
+                float currentZ = m_enterDoors.transform.position.z + (i + m_tileSize / 2) * m_tileSize;
                 //Random.InitState((new System.Random((int)Time.time * 100 * GetHashCode())).Next(-10000, 100000));
                 int width;
                 if(lastWidth == -1)
                 {
                     width = Random.Range(m_roomWidth.x, m_roomWidth.y);
+                    // Placing walls next to enter door
                     for(int j = 1; j < width; ++j)
                     {
-                        float x = m_enterDoors.transform.position.x + (j + (m_tileSize / 2)) * m_tileSize;
-                        Instantiate(m_wallTile, new Vector3(x, 0, currentZ - m_tileSize), Quaternion.identity, m_roomParent);
+                        float x = m_enterDoors.transform.position.x + j * m_tileSize + m_tileSize /2;
+                        Instantiate(m_wallTile, new Vector3(x, 0, m_enterDoors.transform.position.z), Quaternion.identity, m_roomParent);
                     }
-                    for (int j = -2; j >= -width; --j)
+                    for (int j = -1; j > -width; --j)
                     {
-                        float x = m_enterDoors.transform.position.x + (j + (m_tileSize / 2)) * m_tileSize;
-                        Instantiate(m_wallTile, new Vector3(x, 0, currentZ - m_tileSize), Quaternion.identity, m_roomParent);
+                        float x = m_enterDoors.transform.position.x + j * m_tileSize - m_tileSize /2;
+                        Instantiate(m_wallTile, new Vector3(x, 0, m_enterDoors.transform.position.z), Quaternion.identity, m_roomParent);
                     }
                     yield return null;
                 }
@@ -116,7 +119,7 @@ namespace ElementaryMagicians.Dunjeon
                 Debug.Log(width);
                 for(int j = 0; j < width; ++j)
                 {
-                    float currentX = m_enterDoors.transform.position.x + (j + (m_tileSize / 2)) * m_tileSize;
+                    float currentX = m_enterDoors.transform.position.x + j * m_tileSize + m_tileSize /2;
 
                     Tile newTile = new Tile();
                     if (j == 0)
@@ -133,7 +136,7 @@ namespace ElementaryMagicians.Dunjeon
                 }
                 for (int j = 0; j < width; ++j)
                 {
-                    float currentX = m_enterDoors.transform.position.x + -(j + (m_tileSize / 2)) * m_tileSize;
+                    float currentX = m_enterDoors.transform.position.x + -j * m_tileSize - m_tileSize /2;
                     Tile newTile = new Tile();
                     if(j == 0)
                     {
@@ -152,9 +155,9 @@ namespace ElementaryMagicians.Dunjeon
                 float wallWidthPos = width;
                 do
                 {
-                    float x = m_enterDoors.transform.position.x + (wallWidthPos + (m_tileSize / 2)) * m_tileSize;
+                    float x = m_enterDoors.transform.position.x + wallWidthPos * m_tileSize + m_tileSize /2;
                     Instantiate(m_wallTile, new Vector3(x, 0, currentZ), Quaternion.identity, m_roomParent);
-                    x = m_enterDoors.transform.position.x + -(wallWidthPos + (m_tileSize / 2)) * m_tileSize;
+                    x = m_enterDoors.transform.position.x + -wallWidthPos * m_tileSize - m_tileSize /2;
                     Instantiate(m_wallTile, new Vector3(x, 0, currentZ), Quaternion.identity, m_roomParent);
 
                     if(wallWidthPos < lastWidth)
@@ -169,7 +172,8 @@ namespace ElementaryMagicians.Dunjeon
                 yield return null;
                 if(i == m_roomLength - 1)
                 {
-                    for (int j = 1; j < width; ++j)
+                    // Placing walls next to exit door
+                    /*for (int j = 1; j < width; ++j)
                     {
                         float x = m_enterDoors.transform.position.x + (j + (m_tileSize / 2)) * m_tileSize;
                         Instantiate(m_wallTile, new Vector3(x, 0, currentZ + m_tileSize), Quaternion.identity, m_roomParent);
@@ -178,7 +182,18 @@ namespace ElementaryMagicians.Dunjeon
                     {
                         float x = m_enterDoors.transform.position.x + (j + (m_tileSize / 2)) * m_tileSize;
                         Instantiate(m_wallTile, new Vector3(x, 0, currentZ + m_tileSize), Quaternion.identity, m_roomParent);
+                    }*/
+                    for (int j = 1; j < width; ++j)
+                    {
+                        float x = m_enterDoors.transform.position.x + j * m_tileSize + m_tileSize / 2;
+                        Instantiate(m_wallTile, new Vector3(x, 0, currentZ + m_tileSize), Quaternion.identity, m_roomParent);
                     }
+                    for (int j = -1; j > -width; --j)
+                    {
+                        float x = m_enterDoors.transform.position.x + j * m_tileSize - m_tileSize / 2;
+                        Instantiate(m_wallTile, new Vector3(x, 0, currentZ + m_tileSize), Quaternion.identity, m_roomParent);
+                    }
+                    Instantiate(m_doorTile, new Vector3(0, 0, currentZ + m_tileSize), Quaternion.identity, m_roomParent);
                 }
 
                 lastWidth = width;
