@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 656dde2af52586740b7e0693ccb771bf
+guid: 8ffe6e3d1c84ea34dbbd3ac33e534dcd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Sol
-    second: {fileID: 2100000, guid: 86e70f71b12114b4b932b92218b1f987, type: 2}
+      name: Porte
+    second: {fileID: 2100000, guid: 6b93cf5dba7ea5d4ea44bad54fe402d8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbd9a23c3e454c24ebe9ce4d5e08dde8
+guid: d98671f4d5a3749438d81a64e9123ce6
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Lave
-    second: {fileID: 2100000, guid: a8fe346055a7cb9458f4e09fcd2e79ab, type: 2}
+      name: Sol
+    second: {fileID: 2100000, guid: 86e70f71b12114b4b932b92218b1f987, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
