@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ElementaryMagicians.Dunjeon
 {
@@ -84,6 +85,8 @@ namespace ElementaryMagicians.Dunjeon
         public override IEnumerator LoadAsync()
         {
             yield return null;
+
+            #region room generation
             int lastWidth = -1;
             for(int i = 0; i < m_roomLength; ++i)
             {
@@ -295,6 +298,9 @@ namespace ElementaryMagicians.Dunjeon
                 }
             }
             yield return null;
+            #endregion
+
+            m_roomParent.GetComponent<NavMeshSurface>().BuildNavMesh();
 
             yield return base.LoadAsync();
         }
