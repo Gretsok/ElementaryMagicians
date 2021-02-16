@@ -21,6 +21,8 @@ namespace ElementaryMagicians.Dunjeon
         private GameObject m_enterDoors = null;
         [SerializeField]
         private Transform m_roomParent = null;
+        [SerializeField]
+        private Transform m_playerSpawnPoint = null;
 
         [Header("Tiles Prefab")]
         [SerializeField]
@@ -53,6 +55,20 @@ namespace ElementaryMagicians.Dunjeon
         private Vector2Int m_numberOfVoidHoles = new Vector2Int(1, 2);
         [SerializeField]
         private Vector2 m_sizeOfVoidHoles = new Vector2(2, 4);
+
+        [Header("Other references")]
+        [SerializeField]
+        private Player.MagicianTeamController m_magicianTeamPrefab = null;
+        private Player.MagicianTeamController m_magicianTeamController = null;
+        public Player.MagicianTeamController MagicianTeamController => m_magicianTeamController;
+        [SerializeField]
+        private ProjElf.SceneData.SceneData m_roomSceneData = null;
+
+
+        private bool m_canLoadNextRoom = true;
+
+        // FOR TESTING, TO REMOVE
+        public Player.MageData[] m_magesData = null;
 
         #region Tiling
         enum ETileType
@@ -302,10 +318,31 @@ namespace ElementaryMagicians.Dunjeon
 
             NavMeshSurface surface = m_roomParent.GetComponent<NavMeshSurface>();
             surface.buildHeightMesh = true;
-            surface.GetBuildSettings().tileSize = m_tileSize;
             surface.BuildNavMesh();
+            yield return null;
+            InstantiatePlayer();
+            yield return null;
 
             yield return base.LoadAsync();
+        }
+
+        private void InstantiatePlayer()
+        {
+            m_magicianTeamController = Instantiate(m_magicianTeamPrefab, m_playerSpawnPoint.position, m_playerSpawnPoint.rotation);
+            foreach(Player.MageData data in m_magesData)
+            {
+                m_magicianTeamController.AddMagician(data);
+            }
+        }
+
+        internal void LoadNextRoom()
+        {
+            if(m_canLoadNextRoom)
+            {
+                m_roomSceneData.LoadLevel();
+                m_canLoadNextRoom = false;
+            }
+            
         }
     }
 }

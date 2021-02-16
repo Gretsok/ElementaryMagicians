@@ -24,16 +24,12 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         private TeamPositionTargetsManager m_positionTargetsManager = null;
         [SerializeField]
-        private List<MagicianController> m_magicians = new List<MagicianController>();
+        private MagiciansManager m_magiciansManager = null;
 
         private void Start()
         {
             m_actions = new PlayerInputsActions();
             m_actions.Enable();
-            for(int i = 0; i < m_magicians.Count; ++i)
-            {
-                m_magicians[i].Init(m_positionTargetsManager.PositionTargets[i], m_speed);
-            }
         }
 
         private void FixedUpdate()
@@ -55,7 +51,7 @@ namespace ElementaryMagicians.Player
         {
             SetDirection();
             Move();
-            foreach(MagicianController mage in m_magicians)
+            foreach(MagicianController mage in m_magiciansManager.Magicians)
             {
                 mage.DoFixedUpdate();
             }
@@ -63,7 +59,7 @@ namespace ElementaryMagicians.Player
 
         private void DoLateUpdate()
         {
-            foreach (MagicianController mage in m_magicians)
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
             {
                 mage.DoLateUpdate();
             }
@@ -71,12 +67,18 @@ namespace ElementaryMagicians.Player
 
         private void DoUpdate()
         {
-            foreach (MagicianController mage in m_magicians)
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
             {
                 mage.DoUpdate();
             }
         }
 
+        public void AddMagician(MageData mageData)
+        {
+            m_magiciansManager.AddMagician(mageData).Init(
+                m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
+                m_speed);
+        }
 
 
         #region Walker
@@ -109,7 +111,7 @@ namespace ElementaryMagicians.Player
                 Debug.DrawLine(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
         m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f + Vector3.down * 3f,
         Color.blue, 10f);
-                Debug.Log("HIT");
+
             }
         }
         #endregion

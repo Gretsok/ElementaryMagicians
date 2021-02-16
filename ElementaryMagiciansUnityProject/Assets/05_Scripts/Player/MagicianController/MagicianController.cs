@@ -13,6 +13,9 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         private NavMeshAgent m_agent = null;
         internal NavMeshAgent Agent => m_agent;
+        [SerializeField]
+        protected MagicianAnimationHandler m_animationsHandler = null;
+        internal MagicianAnimationHandler AnimationHandler => m_animationsHandler;
 
         internal void Init(Transform positionTarget, float speed)
         {
@@ -24,6 +27,16 @@ namespace ElementaryMagicians.Player
         internal void CleanUp()
         {
             ExitStateMachine();
+        }
+
+        internal virtual void PrimaryAttack()
+        {
+
+        }
+
+        internal virtual void SecondaryAttack()
+        {
+
         }
     }
 }
