@@ -65,7 +65,7 @@ namespace ElementaryMagicians.Dunjeon
         private ProjElf.SceneData.SceneData m_roomSceneData = null;
 
 
-        private bool m_canLoadNextRoom = true;
+        private bool m_canLoadNextRoom = false;
 
         // FOR TESTING, TO REMOVE
         public Player.MageData[] m_magesData = null;
@@ -326,13 +326,17 @@ namespace ElementaryMagicians.Dunjeon
             yield return base.LoadAsync();
         }
 
+        internal override void EnterStateMachine()
+        {
+            base.EnterStateMachine();
+            m_canLoadNextRoom = true;
+        }
+
         private void InstantiatePlayer()
         {
-            m_magicianTeamController = Instantiate(m_magicianTeamPrefab, m_playerSpawnPoint.position, m_playerSpawnPoint.rotation);
-            foreach(Player.MageData data in m_magesData)
-            {
-                m_magicianTeamController.AddMagician(data);
-            }
+            m_magicianTeamController = DunjeonManager.GetInstance().GetMagicianTeamController();
+            m_magicianTeamController.SetPosition(m_playerSpawnPoint.position);
+            m_magicianTeamController.InitAllMagicians();
         }
 
         internal void LoadNextRoom()
