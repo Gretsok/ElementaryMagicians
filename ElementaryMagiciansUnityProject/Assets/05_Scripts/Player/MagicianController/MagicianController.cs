@@ -19,6 +19,7 @@ namespace ElementaryMagicians.Player
 
         internal void Init(Transform positionTarget, float speed)
         {
+            transform.position = positionTarget.position;
             m_positionTarget = positionTarget;
             m_agent.speed = speed;
             EnterStateMachine();

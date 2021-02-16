@@ -80,12 +80,27 @@ namespace ElementaryMagicians.Player
                 m_speed);
         }
 
+        public void InitAllMagicians()
+        {
+            for(int i = 0; i < m_magiciansManager.Magicians.Count; ++i)
+            {
+                m_magiciansManager.Magicians[i].Init(
+                    m_positionTargetsManager.PositionTargets[i],
+                    m_speed);
+            }
+        }
+
 
         #region Walker
         private void SetDirection()
         {
             m_directionInputs = m_actions.Gameplay.Move.ReadValue<Vector2>();
             m_direction = new Vector3(m_directionInputs.x, 0, m_directionInputs.y);
+        }
+
+        internal void SetPosition(Vector3 position)
+        {
+            m_teamTargetPosition.position = position;
         }
 
         private void Move()
