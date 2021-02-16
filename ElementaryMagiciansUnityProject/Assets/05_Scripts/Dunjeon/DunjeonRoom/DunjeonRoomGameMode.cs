@@ -67,8 +67,8 @@ namespace ElementaryMagicians.Dunjeon
 
         private bool m_canLoadNextRoom = false;
 
-        // FOR TESTING, TO REMOVE
-        public Player.MageData[] m_magesData = null;
+        [SerializeField]
+        private Player.MageData[] m_magesData = null;
 
         #region Tiling
         enum ETileType
