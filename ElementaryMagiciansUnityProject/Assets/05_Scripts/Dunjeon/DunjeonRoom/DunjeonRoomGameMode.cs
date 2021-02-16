@@ -300,7 +300,10 @@ namespace ElementaryMagicians.Dunjeon
             yield return null;
             #endregion
 
-            m_roomParent.GetComponent<NavMeshSurface>().BuildNavMesh();
+            NavMeshSurface surface = m_roomParent.GetComponent<NavMeshSurface>();
+            surface.buildHeightMesh = true;
+            surface.GetBuildSettings().tileSize = m_tileSize;
+            surface.BuildNavMesh();
 
             yield return base.LoadAsync();
         }
