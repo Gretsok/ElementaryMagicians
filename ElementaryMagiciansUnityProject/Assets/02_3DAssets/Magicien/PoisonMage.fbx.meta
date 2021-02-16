@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae7b0e4f2cec5f346a97d03e3bab2e73
+guid: 87a072594f6efa547b31dbe1f11ab653
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pics
+      name: Material
     second: {fileID: 2100000, guid: 65f5864eb76d62d48ae7a01f9fe681c4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sol
-    second: {fileID: 2100000, guid: 86e70f71b12114b4b932b92218b1f987, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
