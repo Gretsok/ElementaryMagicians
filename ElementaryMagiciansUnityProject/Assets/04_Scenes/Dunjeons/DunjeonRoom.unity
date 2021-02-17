@@ -385,6 +385,19 @@ MonoBehaviour:
   m_sizeOfSpikesSpot: {x: 4, y: 6}
   m_numberOfVoidHoles: {x: 1, y: 2}
   m_sizeOfVoidHoles: {x: 2, y: 4}
+  m_ennemiesToSpawnData:
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
+    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: c9a2e03aae815b64a92a5b47cdd23d57,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 1, y: 3}
+    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 692d92e6620484d4c9bbd50312252f1b,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 7ad486fbbf76b83499c8e2af30619be7,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 178d4ca4555a52d4ea48d867cb45048e,
+      type: 3}
   m_magicianTeamPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
     type: 3}
   m_roomSceneData: {fileID: 11400000, guid: 858a2cfdeb6101945b83ee7a8c06302c, type: 2}

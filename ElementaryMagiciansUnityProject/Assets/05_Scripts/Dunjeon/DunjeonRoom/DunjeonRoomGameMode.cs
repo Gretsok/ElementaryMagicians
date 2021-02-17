@@ -56,6 +56,16 @@ namespace ElementaryMagicians.Dunjeon
         [SerializeField]
         private Vector2 m_sizeOfVoidHoles = new Vector2(2, 4);
 
+        [System.Serializable]
+        struct EnnemyToSpawnData
+        {
+            public Vector2Int NumberOfEnnemiesToSpawn;
+            public GameObject EnnemyToSpawnPrefab;
+        }
+        [Header("Ennemies To Spawn")]
+        [SerializeField]
+        private List<EnnemyToSpawnData> m_ennemiesToSpawnData = new List<EnnemyToSpawnData>();
+
         [Header("Other references")]
         [SerializeField]
         private Player.MagicianTeamController m_magicianTeamPrefab = null;
@@ -316,12 +326,31 @@ namespace ElementaryMagicians.Dunjeon
             yield return null;
             #endregion
 
+            #region Creating NavMesh
             NavMeshSurface surface = m_roomParent.GetComponent<NavMeshSurface>();
             surface.buildHeightMesh = true;
             surface.BuildNavMesh();
             yield return null;
+            #endregion
+
             InstantiatePlayer();
             yield return null;
+
+            for(int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
+            {
+                int numberOfEnnemiesToSpawn = Random.Range(m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.x, m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.y);
+                for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
+                {
+                    Tile tileToSpawnOn = null;
+                    while(tileToSpawnOn == null || tileToSpawnOn != null && tileToSpawnOn.TileType != ETileType.Ground && tileToSpawnOn.TileType != ETileType.FixedGround)
+                    {
+                        int randomIndex = Random.Range(0, m_tiles.Count);
+                        tileToSpawnOn = m_tiles[randomIndex];
+                        yield return null;
+                    }
+                    Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity);
+                }
+            }
 
             yield return base.LoadAsync();
         }
