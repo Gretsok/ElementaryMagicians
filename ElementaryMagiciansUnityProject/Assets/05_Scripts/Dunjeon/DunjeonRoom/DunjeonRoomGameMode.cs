@@ -80,8 +80,9 @@ namespace ElementaryMagicians.Dunjeon
         [SerializeField]
         private Player.MageData[] m_magesData = null;
 
+
         #region Tiling
-        enum ETileType
+        internal enum ETileType
         {
             Ground,
             FixedGround,
@@ -89,13 +90,24 @@ namespace ElementaryMagicians.Dunjeon
             Spikes,
             Void
         }
-        class Tile
+        internal class Tile
         {
 
-            public ETileType TileType = ETileType.Ground;
-            public Vector3 Position;
+            internal ETileType TileType = ETileType.Ground;
+            internal Vector3 Position;
         }
         private List<Tile> m_tiles = new List<Tile>();
+
+        internal Tile GetGroundTile()
+        {
+            Tile tileToReturn = null;
+            while (tileToReturn == null || tileToReturn != null && tileToReturn.TileType != ETileType.Ground && tileToReturn.TileType != ETileType.FixedGround)
+            {
+                int randomIndex = Random.Range(0, m_tiles.Count);
+                tileToReturn = m_tiles[randomIndex];
+            }
+            return tileToReturn;
+        }
         #endregion
 
         #region Obstacles
@@ -341,13 +353,7 @@ namespace ElementaryMagicians.Dunjeon
                 int numberOfEnnemiesToSpawn = Random.Range(m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.x, m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.y);
                 for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
                 {
-                    Tile tileToSpawnOn = null;
-                    while(tileToSpawnOn == null || tileToSpawnOn != null && tileToSpawnOn.TileType != ETileType.Ground && tileToSpawnOn.TileType != ETileType.FixedGround)
-                    {
-                        int randomIndex = Random.Range(0, m_tiles.Count);
-                        tileToSpawnOn = m_tiles[randomIndex];
-                        yield return null;
-                    }
+                    Tile tileToSpawnOn = GetGroundTile();
                     Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity);
                 }
             }
