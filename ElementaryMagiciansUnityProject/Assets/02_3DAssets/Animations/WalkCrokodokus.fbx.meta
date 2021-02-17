@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: edf2b7c64f8696a4da3eb5e124e44c5b
+guid: 5521afe05fd958d47ac241843e365197
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -5328917033093671019
+    second: Crokodokus|WalkCrokodokus
   externalObjects: {}
   materials:
     materialImportMode: 1
