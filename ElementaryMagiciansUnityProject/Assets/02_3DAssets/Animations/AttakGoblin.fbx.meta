@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 79359f6e39c726d478248308a1f6ea57
+guid: 3f325054a7df0284d80f4b33532fb20c
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 65f5864eb76d62d48ae7a01f9fe681c4, type: 2}
+      74: -5462645682624700464
+    second: Gobelin|AttakGoblin
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

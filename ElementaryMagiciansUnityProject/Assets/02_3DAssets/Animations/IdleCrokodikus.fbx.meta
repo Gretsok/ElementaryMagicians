@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 8eee86a1a1afbf240ada894246686ae8
+guid: ef9ade635c382734cb49798e316b7001
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 65f5864eb76d62d48ae7a01f9fe681c4, type: 2}
+      74: 5985833617636911203
+    second: Crokodokus|IdleCrokodokus
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
