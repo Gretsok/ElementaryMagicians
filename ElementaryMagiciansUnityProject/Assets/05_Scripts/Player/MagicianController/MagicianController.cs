@@ -1,4 +1,5 @@
-﻿using MOtter.StatesMachine;
+﻿using ElementaryMagicians.Combat;
+using MOtter.StatesMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,21 +17,31 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         protected MagicianAnimationHandler m_animationsHandler = null;
         internal MagicianAnimationHandler AnimationHandler => m_animationsHandler;
+        protected MagicianTeamController m_teamController = null;
 
-        internal void Init(Transform positionTarget, float speed)
+
+        internal void Init(MagicianTeamController magicianTeamController, Transform positionTarget, float speed)
         {
             transform.position = positionTarget.position;
             m_positionTarget = positionTarget;
             m_agent.speed = speed;
+            m_teamController = magicianTeamController;
             EnterStateMachine();
         }
 
-        internal void Init(Transform positionTarget, float speed, Vector3 spawnPosition)
+        internal void Init(MagicianTeamController magicianTeamController, Transform positionTarget, float speed, Vector3 spawnPosition)
         {
             transform.position = spawnPosition;
             m_positionTarget = positionTarget;
             m_agent.speed = speed;
+            m_teamController = magicianTeamController;
             EnterStateMachine();
+        }
+
+        internal override void EnterStateMachine()
+        {
+            base.EnterStateMachine();
+            GetComponent<CombatCollider>().SetOwner(m_teamController.CombatController);
         }
 
         internal void CleanUp()

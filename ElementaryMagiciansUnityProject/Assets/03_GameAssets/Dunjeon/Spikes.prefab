@@ -29,7 +29,6 @@ GameObject:
   m_Component:
   - component: {fileID: 359743775872920546}
   - component: {fileID: 578393273711802811}
-  - component: {fileID: 4993343437260229586}
   m_Layer: 9
   m_Name: Spikes
   m_TagString: Untagged
@@ -67,19 +66,6 @@ MonoBehaviour:
   m_animator: {fileID: 6553416127574302889}
   m_timeToWaitToTrigger: {x: 1, y: 4}
   m_timeToWaitToUntrigger: {x: 1, y: 4}
---- !u!65 &4993343437260229586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5049710305801603592}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &7284125624586172610
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427579009407259241}
   - component: {fileID: 8506029699733986202}
+  - component: {fileID: 8418692055944053099}
   m_Layer: 9
   m_Name: DamageGiver
   m_TagString: Untagged
@@ -124,6 +111,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1, z: 1.75}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8418692055944053099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284125624586172610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f9775d98304954b97afbc918b11ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damage: 20
+  m_cooldown: 2
 --- !u!1001 &4503359035626955728
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ namespace ElementaryMagicians.Dunjeon
     {
         private DunjeonRoomGameMode m_gamemode = null;
 
+        private MageTeamHealthBarPanel m_teamHealthBar = null;
+
         private void Start()
         {
             m_gamemode = MOtter.MOtterApplication.GetInstance().GAMEMANAGER.GetCurrentMainStateMachine<DunjeonRoomGameMode>();
@@ -18,12 +20,16 @@ namespace ElementaryMagicians.Dunjeon
             {
                 m_gamemode.Ennemies[i].EnterStateMachine();
             }
+            m_teamHealthBar = GetPanel<MageTeamHealthBarPanel>();
         }
 
         public override void UpdateState()
         {
             base.UpdateState();
             m_gamemode.MagicianTeamController.DoUpdate();
+            m_teamHealthBar.SetHealth(
+                (float)m_gamemode.MagicianTeamController.CombatController.LifePoints
+                / (float)m_gamemode.MagicianTeamController.CombatController.MaxLifePoints);
             for(int i = m_gamemode.Ennemies.Count - 1; i >= 0; --i)
             {
                 m_gamemode.Ennemies[i].DoUpdate();

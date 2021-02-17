@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using ElementaryMagicians.Combat;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +18,7 @@ public class Spikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_timeToWait = Random.Range(m_timeToWaitToTrigger.x, m_timeToWaitToTrigger.y);
+        m_timeToWait = UnityEngine.Random.Range(m_timeToWaitToTrigger.x, m_timeToWaitToTrigger.y);
         m_timeOfLastSwitch = Time.time;
     }
 
@@ -28,13 +30,13 @@ public class Spikes : MonoBehaviour
             if(m_isTriggered)
             {
                 m_isTriggered = false;
-                m_timeToWait = Random.Range(m_timeToWaitToTrigger.x, m_timeToWaitToTrigger.y);
+                m_timeToWait = UnityEngine.Random.Range(m_timeToWaitToTrigger.x, m_timeToWaitToTrigger.y);
 
             }
             else
             {
                 m_isTriggered = true;
-                m_timeToWait = Random.Range(m_timeToWaitToUntrigger.x, m_timeToWaitToUntrigger.y);
+                m_timeToWait = UnityEngine.Random.Range(m_timeToWaitToUntrigger.x, m_timeToWaitToUntrigger.y);
             }
             m_timeOfLastSwitch = Time.time;
             m_animator.SetBool(IS_TRIGGERED, m_isTriggered);

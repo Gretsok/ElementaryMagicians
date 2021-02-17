@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ElementaryMagicians.Combat;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ElementaryMagicians.Player
@@ -26,12 +27,15 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         private MagiciansManager m_magiciansManager = null;
 
-
+        [SerializeField]
+        private CombatController m_combatController = null;
+        internal CombatController CombatController => m_combatController;
 
         private void Start()
         {
             m_actions = new PlayerInputsActions();
             m_actions.Enable();
+            m_combatController.Init();
         }
 
 
@@ -43,6 +47,7 @@ namespace ElementaryMagicians.Player
             {
                 mage.DoFixedUpdate();
             }
+            m_combatController.DoUpdate();
         }
 
         public void DoLateUpdate()
@@ -63,14 +68,14 @@ namespace ElementaryMagicians.Player
 
         public void AddMagician(MageData mageData)
         {
-            m_magiciansManager.AddMagician(mageData).Init(
+            m_magiciansManager.AddMagician(mageData).Init(this,
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed);
         }
 
         public void AddMagician(MageData mageData, Vector3 spawnPosition)
         {
-            m_magiciansManager.AddMagician(mageData).Init(
+            m_magiciansManager.AddMagician(mageData).Init(this,
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed,
                 spawnPosition);
@@ -80,7 +85,7 @@ namespace ElementaryMagicians.Player
         {
             for(int i = 0; i < m_magiciansManager.Magicians.Count; ++i)
             {
-                m_magiciansManager.Magicians[i].Init(
+                m_magiciansManager.Magicians[i].Init(this,
                     m_positionTargetsManager.PositionTargets[i],
                     m_speed);
             }
