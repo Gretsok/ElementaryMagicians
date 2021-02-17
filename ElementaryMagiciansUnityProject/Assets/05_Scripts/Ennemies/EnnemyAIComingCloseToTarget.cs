@@ -11,12 +11,20 @@ namespace ElementaryMagicians.Ennemy
         [SerializeField]
         private EnnemyAIState m_attackState = null;
 
+        private float m_updateDestinationDelay = 0.5f;
+        private float m_timeOfLastUpdate = float.MinValue;
+
         public override void UpdateState()
         {
             base.UpdateState();
             if(m_owner.ClosestTarget != null)
             {
-                m_owner.Agent.SetDestination(m_owner.ClosestTarget.transform.position);
+                if(Time.time - m_timeOfLastUpdate > m_updateDestinationDelay)
+                {
+                    m_owner.Agent.SetDestination(m_owner.ClosestTarget.transform.position);
+                    m_timeOfLastUpdate = Time.time;
+                }
+                
             }
             else if(m_owner.SqrDistanceToClosestTarget < m_sqrDistanceToStartAttacking)
             {
