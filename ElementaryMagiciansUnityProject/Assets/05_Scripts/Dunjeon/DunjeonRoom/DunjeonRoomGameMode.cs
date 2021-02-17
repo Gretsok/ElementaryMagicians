@@ -60,11 +60,14 @@ namespace ElementaryMagicians.Dunjeon
         struct EnnemyToSpawnData
         {
             public Vector2Int NumberOfEnnemiesToSpawn;
-            public GameObject EnnemyToSpawnPrefab;
+            public Ennemy.EnnemyAI EnnemyToSpawnPrefab;
         }
         [Header("Ennemies To Spawn")]
         [SerializeField]
         private List<EnnemyToSpawnData> m_ennemiesToSpawnData = new List<EnnemyToSpawnData>();
+
+        private List<Ennemy.EnnemyAI> m_ennemies = new List<Ennemy.EnnemyAI>();
+        internal List<Ennemy.EnnemyAI> Ennemies => m_ennemies;
 
         [Header("Other references")]
         [SerializeField]
@@ -354,7 +357,7 @@ namespace ElementaryMagicians.Dunjeon
                 for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
                 {
                     Tile tileToSpawnOn = GetGroundTile();
-                    Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity);
+                    m_ennemies.Add(Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity));
                 }
             }
 

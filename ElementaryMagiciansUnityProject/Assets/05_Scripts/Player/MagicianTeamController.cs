@@ -32,22 +32,8 @@ namespace ElementaryMagicians.Player
             m_actions.Enable();
         }
 
-        private void FixedUpdate()
-        {
-            DoFixedUpdate();
-        }
 
-        private void LateUpdate()
-        {
-            DoLateUpdate();
-        }
-
-        private void Update()
-        {
-            DoUpdate();
-        }
-
-        private void DoFixedUpdate()
+        public void DoFixedUpdate()
         {
             SetDirection();
             Move();
@@ -57,7 +43,7 @@ namespace ElementaryMagicians.Player
             }
         }
 
-        private void DoLateUpdate()
+        public void DoLateUpdate()
         {
             foreach (MagicianController mage in m_magiciansManager.Magicians)
             {
@@ -65,7 +51,7 @@ namespace ElementaryMagicians.Player
             }
         }
 
-        private void DoUpdate()
+        public void DoUpdate()
         {
             foreach (MagicianController mage in m_magiciansManager.Magicians)
             {

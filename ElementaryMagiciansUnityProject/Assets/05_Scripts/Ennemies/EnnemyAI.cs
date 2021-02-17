@@ -41,7 +41,7 @@ namespace ElementaryMagicians.Ennemy
                 }
             }
             m_sqrDistanceToClosestTarget = sqrDistanceOfClosestTarget;
-            if(m_closestTarget != null)
+            if(m_closestTarget != null && m_currentState != m_comingCloseToTarget)
             {
                 SwitchToState(m_comingCloseToTarget);
             }
@@ -55,7 +55,7 @@ namespace ElementaryMagicians.Ennemy
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        /*private void OnTriggerExit(Collider other)
         {
             if (other.TryGetComponent<Player.MagicianController>(out Player.MagicianController magician))
             {
@@ -64,6 +64,6 @@ namespace ElementaryMagicians.Ennemy
                     m_targets.Remove(magician);
                 }
             }
-        }
+        }*/
     }
 }

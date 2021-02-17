@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150e84fb04be9b84ea2a733011e9dbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultState: {fileID: 0}
+  m_defaultState: {fileID: 1396196559}
   m_roomLength: 30
   m_roomWidth: {x: 12, y: 20}
   m_roomMaxWidthStep: 2
@@ -387,16 +387,16 @@ MonoBehaviour:
   m_sizeOfVoidHoles: {x: 2, y: 4}
   m_ennemiesToSpawnData:
   - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
-    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: c9a2e03aae815b64a92a5b47cdd23d57,
+    EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
       type: 3}
   - NumberOfEnnemiesToSpawn: {x: 1, y: 3}
-    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 692d92e6620484d4c9bbd50312252f1b,
+    EnnemyToSpawnPrefab: {fileID: 1759823326020389925, guid: d3b805a7eafc19a4081a5dbd3939a920,
       type: 3}
   - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
-    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 7ad486fbbf76b83499c8e2af30619be7,
+    EnnemyToSpawnPrefab: {fileID: 1371183291684993931, guid: 7f5e9dff11948544ca78cab95b350a49,
       type: 3}
   - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
-    EnnemyToSpawnPrefab: {fileID: 919132149155446097, guid: 178d4ca4555a52d4ea48d867cb45048e,
+    EnnemyToSpawnPrefab: {fileID: 8914587936295203618, guid: d531488b7ebb5e84dbe90dda0f914faa,
       type: 3}
   m_magicianTeamPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
     type: 3}
@@ -419,7 +419,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1396196560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -504,6 +505,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1126694638}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1396196558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396196560}
+  - component: {fileID: 1396196559}
+  m_Layer: 0
+  m_Name: GameplayState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1396196559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396196558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb088f03c38e694787c01b1a14964bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nextState: {fileID: 0}
+  m_panels: []
+--- !u!4 &1396196560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396196558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1075092471}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551777576
 GameObject:
   m_ObjectHideFlags: 0
