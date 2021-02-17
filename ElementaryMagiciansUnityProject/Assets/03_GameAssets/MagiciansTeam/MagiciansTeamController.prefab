@@ -650,6 +650,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_magicians: []
+  m_magesData:
+  - {fileID: 11400000, guid: 6e0acf0ee27b66948879251063104721, type: 2}
+  - {fileID: 11400000, guid: b0e0905eeed733a4abbe1b2fe0c81aad, type: 2}
+  - {fileID: 11400000, guid: 6f5caf9b6ac86f34183bc39647b09431, type: 2}
+  - {fileID: 11400000, guid: 9d03a2d96d2e1b04d80b4f90d98f01d1, type: 2}
+  - {fileID: 11400000, guid: bab29c36d65eb214ebe5aee06e777122, type: 2}
+  - {fileID: 11400000, guid: 49157abec320b3548854c7538f337c02, type: 2}
+  - {fileID: 11400000, guid: 2c5b3609269e83f46874dd52adc917b6, type: 2}
 --- !u!1 &1191260518697900944
 GameObject:
   m_ObjectHideFlags: 0

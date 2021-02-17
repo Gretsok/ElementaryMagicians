@@ -385,6 +385,8 @@ MonoBehaviour:
   m_sizeOfSpikesSpot: {x: 4, y: 6}
   m_numberOfVoidHoles: {x: 1, y: 2}
   m_sizeOfVoidHoles: {x: 2, y: 4}
+  m_magePrisonPrefab: {fileID: 7788023610341835007, guid: dd66d9ea3bde0c04eab87cc967f37675,
+    type: 3}
   m_ennemiesToSpawnData:
   - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
     EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
@@ -401,14 +403,6 @@ MonoBehaviour:
   m_magicianTeamPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
     type: 3}
   m_roomSceneData: {fileID: 11400000, guid: 858a2cfdeb6101945b83ee7a8c06302c, type: 2}
-  m_magesData:
-  - {fileID: 11400000, guid: 6e0acf0ee27b66948879251063104721, type: 2}
-  - {fileID: 11400000, guid: bab29c36d65eb214ebe5aee06e777122, type: 2}
-  - {fileID: 11400000, guid: 6f5caf9b6ac86f34183bc39647b09431, type: 2}
-  - {fileID: 11400000, guid: b0e0905eeed733a4abbe1b2fe0c81aad, type: 2}
-  - {fileID: 11400000, guid: 9d03a2d96d2e1b04d80b4f90d98f01d1, type: 2}
-  - {fileID: 11400000, guid: 49157abec320b3548854c7538f337c02, type: 2}
-  - {fileID: 11400000, guid: 2c5b3609269e83f46874dd52adc917b6, type: 2}
 --- !u!4 &1075092471
 Transform:
   m_ObjectHideFlags: 0

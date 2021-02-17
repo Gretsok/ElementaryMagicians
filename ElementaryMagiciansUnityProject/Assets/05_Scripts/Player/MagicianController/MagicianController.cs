@@ -25,6 +25,14 @@ namespace ElementaryMagicians.Player
             EnterStateMachine();
         }
 
+        internal void Init(Transform positionTarget, float speed, Vector3 spawnPosition)
+        {
+            transform.position = spawnPosition;
+            m_positionTarget = positionTarget;
+            m_agent.speed = speed;
+            EnterStateMachine();
+        }
+
         internal void CleanUp()
         {
             ExitStateMachine();

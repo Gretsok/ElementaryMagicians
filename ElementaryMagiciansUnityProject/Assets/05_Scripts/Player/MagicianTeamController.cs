@@ -26,6 +26,8 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         private MagiciansManager m_magiciansManager = null;
 
+
+
         private void Start()
         {
             m_actions = new PlayerInputsActions();
@@ -66,6 +68,14 @@ namespace ElementaryMagicians.Player
                 m_speed);
         }
 
+        public void AddMagician(MageData mageData, Vector3 spawnPosition)
+        {
+            m_magiciansManager.AddMagician(mageData).Init(
+                m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
+                m_speed,
+                spawnPosition);
+        }
+
         public void InitAllMagicians()
         {
             for(int i = 0; i < m_magiciansManager.Magicians.Count; ++i)
@@ -76,6 +86,10 @@ namespace ElementaryMagicians.Player
             }
         }
 
+        public MageData GetRandomFreeMageData()
+        {
+            return m_magiciansManager.GetRandomFreeMageData();
+        }
 
         #region Walker
         private void SetDirection()

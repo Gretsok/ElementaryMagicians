@@ -21,6 +21,55 @@ namespace ElementaryMagicians.Player
         internal bool HasPlantMagician = false;
         #endregion
 
+
+        [SerializeField]
+        private MageData[] m_magesData = null;
+
+
+        internal MageData GetRandomFreeMageData()
+        {
+            List<MageData> magesData = new List<MageData>();
+            foreach(MageData mageData in m_magesData)
+            {
+                if (mageData.MagicianPrefab is FireMagicianController && !HasFireMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is WaterMagicianController && !HasWaterMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is WindMagicianController && !HasWindMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is IceMagicianController && !HasIceMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is PoisonMagicianController && !HasPoisonMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is RockMagicianController && !HasRockMagician)
+                {
+                    magesData.Add(mageData);
+                }
+                else if (mageData.MagicianPrefab is PlantMagicianController && !HasPlantMagician)
+                {
+                    magesData.Add(mageData);
+                }
+            }
+            if(magesData.Count == 0)
+            {
+                Debug.LogWarning("ALREADY HAVE ALL MAGES");
+                return null;
+            }
+            int randomIndex = Random.Range(0, magesData.Count);
+            return magesData[randomIndex];
+            
+        }
+
         internal MagicianController AddMagician(MageData mageData)
         {
             

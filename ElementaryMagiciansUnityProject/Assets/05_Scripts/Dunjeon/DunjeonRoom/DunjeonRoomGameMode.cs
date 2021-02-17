@@ -56,6 +56,13 @@ namespace ElementaryMagicians.Dunjeon
         [SerializeField]
         private Vector2 m_sizeOfVoidHoles = new Vector2(2, 4);
 
+        [Header("Objects to spawn")]
+        [SerializeField]
+        private MagePrison m_magePrisonPrefab = null;
+        private int m_magePrisonChanceToSpawnInPercent = 20;
+
+
+
         [System.Serializable]
         struct EnnemyToSpawnData
         {
@@ -80,8 +87,6 @@ namespace ElementaryMagicians.Dunjeon
 
         private bool m_canLoadNextRoom = false;
 
-        [SerializeField]
-        private Player.MageData[] m_magesData = null;
 
 
         #region Tiling
@@ -350,14 +355,30 @@ namespace ElementaryMagicians.Dunjeon
 
             InstantiatePlayer();
             yield return null;
-
-            for(int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
+            #region Spawning Ennemies
+            for (int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
             {
                 int numberOfEnnemiesToSpawn = Random.Range(m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.x, m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.y);
                 for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
                 {
                     Tile tileToSpawnOn = GetGroundTile();
                     m_ennemies.Add(Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity));
+                }
+            }
+            #endregion
+            yield return null;
+
+            int randomPercentToSpawnMagePrison = Random.Range(1, 101);
+            Debug.Log("PRISON SPAWNING: " + randomPercentToSpawnMagePrison + " for " + m_magePrisonChanceToSpawnInPercent);
+            if(randomPercentToSpawnMagePrison < m_magePrisonChanceToSpawnInPercent)
+            {
+                Player.MageData mageDataToUse = m_magicianTeamController.GetRandomFreeMageData();
+                if(mageDataToUse != null)
+                {
+                    Tile tileToSpawnPrisonOn = GetGroundTile();
+                    MagePrison magePrison = Instantiate(m_magePrisonPrefab, tileToSpawnPrisonOn.Position + Vector3.up, Quaternion.identity);
+                    magePrison.Inflate(mageDataToUse);
+                    Debug.Log("Prison Spawned");
                 }
             }
 
