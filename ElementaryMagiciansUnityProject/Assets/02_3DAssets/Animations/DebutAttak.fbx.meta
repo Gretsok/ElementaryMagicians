@@ -1,20 +1,11 @@
 fileFormatVersion: 2
-guid: e2d36ade2a9a00e4089fb06cdad41baf
+guid: 3ceae7ad58989584ead1771942285e31
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 7704839812204617981
-    second: FireMage.001|1Idle.001
-  - first:
-      74: 8912782265689363524
-    second: FireMage.001|CrokodokusAction
-  - first:
-      74: -3652204964130548126
-    second: FireMage.001|Run
-  - first:
-      74: 1365353649896671242
-    second: FireMage.001|VolantAction
+      74: -4896412840990830492
+    second: PoisonMage|DebutAttak
   externalObjects: {}
   materials:
     materialImportMode: 1
