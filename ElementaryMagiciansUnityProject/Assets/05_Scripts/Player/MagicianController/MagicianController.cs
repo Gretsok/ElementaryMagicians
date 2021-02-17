@@ -30,6 +30,15 @@ namespace ElementaryMagicians.Player
             ExitStateMachine();
         }
 
+        public override void DoUpdate()
+        {
+            base.DoUpdate();
+            m_animationsHandler.SetSpeedRatio(
+                m_agent.velocity.magnitude
+                / m_agent.speed);
+            
+        }
+
         internal virtual void PrimaryAttack()
         {
 
