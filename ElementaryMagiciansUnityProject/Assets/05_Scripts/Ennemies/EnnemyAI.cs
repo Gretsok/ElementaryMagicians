@@ -21,6 +21,14 @@ namespace ElementaryMagicians.Ennemy
         private float m_sqrDistanceToClosestTarget = float.MaxValue;
         internal Player.MagicianController ClosestTarget => m_closestTarget;
         internal float SqrDistanceToClosestTarget => m_sqrDistanceToClosestTarget;
+        internal override void EnterStateMachine()
+        {
+            base.EnterStateMachine();
+            Agent.SetAreaCost(3, 10);
+            Agent.SetAreaCost(4, 2);
+
+        }
+
         public override void DoLateUpdate()
         {
             base.DoLateUpdate();

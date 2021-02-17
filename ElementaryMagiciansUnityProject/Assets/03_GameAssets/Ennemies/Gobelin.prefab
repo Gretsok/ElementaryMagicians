@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4003487258089602562}
   - component: {fileID: 129206078607061615}
   - component: {fileID: 7061462030142308461}
+  - component: {fileID: 5036446546676798899}
+  - component: {fileID: 1530454499003245733}
   m_Layer: 0
   m_Name: Gobelin
   m_TagString: Untagged
@@ -100,6 +102,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 1, z: 12}
   m_Center: {x: 0, y: 0.5, z: 4}
+--- !u!114 &5036446546676798899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367878907078244778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxLifePoints: 50
+  m_teamIndex: 0
+--- !u!114 &1530454499003245733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367878907078244778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_owner: {fileID: 5036446546676798899}
 --- !u!1 &367878907084293801
 GameObject:
   m_ObjectHideFlags: 0

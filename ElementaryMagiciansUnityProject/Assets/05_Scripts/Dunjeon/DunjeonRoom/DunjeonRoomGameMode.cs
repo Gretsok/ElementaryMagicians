@@ -59,6 +59,7 @@ namespace ElementaryMagicians.Dunjeon
         [Header("Objects to spawn")]
         [SerializeField]
         private MagePrison m_magePrisonPrefab = null;
+        [SerializeField]
         private int m_magePrisonChanceToSpawnInPercent = 20;
 
 

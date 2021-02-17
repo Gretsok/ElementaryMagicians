@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 7360265576023085516}
   - component: {fileID: 6047086738003048439}
   - component: {fileID: 5796337379386167599}
+  - component: {fileID: 8340187252236491660}
+  - component: {fileID: 2362435548116442438}
   m_Layer: 0
   m_Name: Vampire
   m_TagString: Untagged
@@ -145,6 +147,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 1, z: 8}
   m_Center: {x: 0, y: 0.5, z: 3}
+--- !u!114 &8340187252236491660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360265576023085517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxLifePoints: 70
+  m_teamIndex: 0
+--- !u!114 &2362435548116442438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360265576023085517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_owner: {fileID: 8340187252236491660}
 --- !u!1 &7360265576969035538
 GameObject:
   m_ObjectHideFlags: 0

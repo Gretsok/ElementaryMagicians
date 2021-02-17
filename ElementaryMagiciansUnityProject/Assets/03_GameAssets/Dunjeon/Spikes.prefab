@@ -257,6 +257,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -674449036139524865, guid: ae7b0e4f2cec5f346a97d03e3bab2e73,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -674449036139524865, guid: ae7b0e4f2cec5f346a97d03e3bab2e73,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae7b0e4f2cec5f346a97d03e3bab2e73,
         type: 3}
       propertyPath: m_Name

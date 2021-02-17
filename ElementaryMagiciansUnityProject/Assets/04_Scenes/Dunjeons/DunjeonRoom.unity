@@ -372,7 +372,7 @@ MonoBehaviour:
   m_TileSize: 256
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
+  m_BuildHeightMesh: 1
   m_NavMeshData: {fileID: 0}
 --- !u!1 &558543940
 GameObject:
@@ -599,6 +599,7 @@ MonoBehaviour:
   m_sizeOfVoidHoles: {x: 2, y: 4}
   m_magePrisonPrefab: {fileID: 7788023610341835007, guid: dd66d9ea3bde0c04eab87cc967f37675,
     type: 3}
+  m_magePrisonChanceToSpawnInPercent: 60
   m_ennemiesToSpawnData:
   - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
     EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
