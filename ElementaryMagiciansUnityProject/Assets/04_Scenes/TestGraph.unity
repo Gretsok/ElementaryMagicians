@@ -382,6 +382,26 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.minScalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1333072740309570417, guid: 391e70abb12299b49815c8ec3998a60c,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333072740309570417, guid: 391e70abb12299b49815c8ec3998a60c,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333072740309570417, guid: 391e70abb12299b49815c8ec3998a60c,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333072740309570417, guid: 391e70abb12299b49815c8ec3998a60c,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2189270423375689884, guid: 391e70abb12299b49815c8ec3998a60c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -395,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 6164934713008986201, guid: 391e70abb12299b49815c8ec3998a60c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.516
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 6164934713008986201, guid: 391e70abb12299b49815c8ec3998a60c,
         type: 3}
@@ -446,6 +466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058041579396388207, guid: 391e70abb12299b49815c8ec3998a60c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391e70abb12299b49815c8ec3998a60c, type: 3}
