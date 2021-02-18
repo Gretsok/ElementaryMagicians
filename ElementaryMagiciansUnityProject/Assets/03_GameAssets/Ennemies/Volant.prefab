@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_owner: {fileID: 2375081109415379583}
+  m_owner: {fileID: 3197902951554463513}
 --- !u!54 &2919398144997301434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 8914587936295203618}
   - component: {fileID: 8914587936295203617}
   - component: {fileID: 8269067916342030568}
-  - component: {fileID: 2375081109415379583}
+  - component: {fileID: 3197902951554463513}
   m_Layer: 0
   m_Name: Volant
   m_TagString: Untagged
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_walkingState: {fileID: 8914587936874468301}
   m_comingCloseToTarget: {fileID: 8914587937182854286}
   m_animationsHandler: {fileID: 6681567944116888331}
-  m_combatController: {fileID: 2375081109415379583}
+  m_combatController: {fileID: 3197902951554463513}
 --- !u!195 &8914587936295203617
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 1, z: 20}
   m_Center: {x: 0, y: 0.5, z: 7}
---- !u!114 &2375081109415379583
+--- !u!114 &3197902951554463513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,10 +316,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8914587936295203623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fd011448cda9cd4a996660795586567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLifePoints: 50
+  m_maxLifePoints: 200
   m_teamIndex: 0
 --- !u!1 &8914587936874468339
 GameObject:

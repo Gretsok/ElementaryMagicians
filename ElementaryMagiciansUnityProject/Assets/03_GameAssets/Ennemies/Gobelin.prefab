@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1371183291684993931}
   - component: {fileID: 4003487258089602562}
   - component: {fileID: 7061462030142308461}
-  - component: {fileID: 5036446546676798899}
+  - component: {fileID: 5530036204668701339}
   m_Layer: 0
   m_Name: Gobelin
   m_TagString: Untagged
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_walkingState: {fileID: 367878907176011283}
   m_comingCloseToTarget: {fileID: 367878907084293807}
   m_animationsHandler: {fileID: 6018713709091487018}
-  m_combatController: {fileID: 5036446546676798899}
+  m_combatController: {fileID: 5530036204668701339}
 --- !u!195 &4003487258089602562
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 1, z: 12}
   m_Center: {x: 0, y: 0.5, z: 4}
---- !u!114 &5036446546676798899
+--- !u!114 &5530036204668701339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 367878907078244778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fd011448cda9cd4a996660795586567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLifePoints: 50
+  m_maxLifePoints: 250
   m_teamIndex: 0
 --- !u!1 &367878907084293801
 GameObject:
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_owner: {fileID: 5036446546676798899}
+  m_owner: {fileID: 5530036204668701339}
 --- !u!54 &2627443367651074380
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_owner: {fileID: 899201197695273304}
+  m_owner: {fileID: 8139332347959936874}
 --- !u!54 &5065788197999414896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 1759823326020389925}
   - component: {fileID: 1759823326020389926}
   - component: {fileID: 1252300142195601080}
-  - component: {fileID: 899201197695273304}
+  - component: {fileID: 8139332347959936874}
   m_Layer: 0
   m_Name: Crokodokus
   m_TagString: Untagged
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_walkingState: {fileID: 1759823326640419531}
   m_comingCloseToTarget: {fileID: 1759823325900981064}
   m_animationsHandler: {fileID: 2060859951161310939}
-  m_combatController: {fileID: 899201197695273304}
+  m_combatController: {fileID: 8139332347959936874}
 --- !u!195 &1759823326020389926
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 1, z: 18}
   m_Center: {x: 0, y: 0.5, z: 3}
---- !u!114 &899201197695273304
+--- !u!114 &8139332347959936874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,10 +266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759823326020389927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fd011448cda9cd4a996660795586567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLifePoints: 100
+  m_maxLifePoints: 500
   m_teamIndex: 0
 --- !u!1 &1759823326640419525
 GameObject:
