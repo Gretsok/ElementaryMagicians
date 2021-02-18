@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 777002801914195600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3886353993634842202}
   m_RootOrder: 1
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.7
+      scalar: 0.3
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -4764,7 +4764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3886353993634842202}
   m_Layer: 0
-  m_Name: FireSpell1
+  m_Name: FireSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4779,7 +4779,7 @@ Transform:
   m_GameObject: {fileID: 3846995692300347412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 3011520484677613273}
   - {fileID: 7373127452743589602}
@@ -4797,7 +4797,6 @@ GameObject:
   - component: {fileID: 3011520484677613273}
   - component: {fileID: 7700072781144913176}
   - component: {fileID: 2449635612390966212}
-  - component: {fileID: 5933809824964115710}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4866,16 +4865,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &5933809824964115710
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024229449465578180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

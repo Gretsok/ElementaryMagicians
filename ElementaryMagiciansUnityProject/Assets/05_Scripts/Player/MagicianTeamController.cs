@@ -36,9 +36,77 @@ namespace ElementaryMagicians.Player
             m_actions = new PlayerInputsActions();
             m_actions.Enable();
             m_combatController.Init();
+            RegisterInputs();
         }
 
+        private void RegisterInputs()
+        {
+            m_actions.Gameplay.FirstMage.performed += FirstMage_performed;
+            m_actions.Gameplay.SecondMage.performed += SecondMage_performed;
+            m_actions.Gameplay.ThirdMage.performed += ThirdMage_performed;
+            m_actions.Gameplay.FourthMage.performed += FourthMage_performed;
+            m_actions.Gameplay.FifthMage.performed += FifthMage_performed;
+            m_actions.Gameplay.SixthMage.performed += SixthMage_performed;
+            m_actions.Gameplay.SeventhMAge.performed += SeventhMAge_performed;
+        }
 
+        #region Magicians Attacks
+        private void SeventhMAge_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 7)
+            {
+                m_magiciansManager.Magicians[6].PrimaryAttack();
+            }
+        }
+
+        private void SixthMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 6)
+            {
+                m_magiciansManager.Magicians[5].PrimaryAttack();
+            }
+        }
+
+        private void FifthMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 5)
+            {
+                m_magiciansManager.Magicians[4].PrimaryAttack();
+            }
+        }
+
+        private void FourthMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 4)
+            {
+                m_magiciansManager.Magicians[3].PrimaryAttack();
+            }
+        }
+
+        private void ThirdMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 3)
+            {
+                m_magiciansManager.Magicians[2].PrimaryAttack();
+            }
+        }
+
+        private void SecondMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (m_magiciansManager.Magicians.Count >= 2)
+            {
+                m_magiciansManager.Magicians[1].PrimaryAttack();
+            }
+        }
+
+        private void FirstMage_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if(m_magiciansManager.Magicians.Count >= 1)
+            {
+                m_magiciansManager.Magicians[0].PrimaryAttack();
+            }
+        }
+        #endregion
         public void DoFixedUpdate()
         {
             SetDirection();
@@ -66,6 +134,8 @@ namespace ElementaryMagicians.Player
             }
         }
 
+
+        #region Magicians Management
         public void AddMagician(MageData mageData)
         {
             m_magiciansManager.AddMagician(mageData).Init(this,
@@ -95,6 +165,7 @@ namespace ElementaryMagicians.Player
         {
             return m_magiciansManager.GetRandomFreeMageData();
         }
+        #endregion
 
         #region Walker
         private void SetDirection()

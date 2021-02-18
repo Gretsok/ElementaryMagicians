@@ -79,7 +79,7 @@ namespace ElementaryMagicians.Combat
             if(other.TryGetComponent<IDamageDealer>(out IDamageDealer damageDealer))
             {
                 DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
-                if(damageDealerData == null)
+                if(damageDealerData == null || damageDealerData.DealerType.IndividualDealers)
                 {
                     damageDealerData = new DamageDealerData();
                     damageDealerData.DealerType = damageDealer.DealerType;

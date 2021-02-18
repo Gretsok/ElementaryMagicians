@@ -19,6 +19,14 @@ namespace ElementaryMagicians.Player
         internal MagicianAnimationHandler AnimationHandler => m_animationsHandler;
         protected MagicianTeamController m_teamController = null;
 
+        protected float m_cooldown = 0f;
+        public float Cooldown => m_cooldown;
+
+        [SerializeField]
+        protected float m_primaryAttackCooldown = 3f;
+        [SerializeField]
+        protected float m_secondaryAttackCooldown = 3f;
+
 
         internal void Init(MagicianTeamController magicianTeamController, Transform positionTarget, float speed)
         {
@@ -55,17 +63,29 @@ namespace ElementaryMagicians.Player
             m_animationsHandler.SetSpeedRatio(
                 m_agent.velocity.magnitude
                 / m_agent.speed);
+            if(m_cooldown > 0)
+            {
+                m_cooldown -= Time.deltaTime;
+            }
             
         }
 
         internal virtual void PrimaryAttack()
         {
-
+            if(m_cooldown > 0)
+            {
+                return;
+            }
+            m_cooldown = m_primaryAttackCooldown;
         }
 
         internal virtual void SecondaryAttack()
         {
-
+            if (m_cooldown > 0)
+            {
+                return;
+            }
+            m_cooldown = m_secondaryAttackCooldown;
         }
     }
 }

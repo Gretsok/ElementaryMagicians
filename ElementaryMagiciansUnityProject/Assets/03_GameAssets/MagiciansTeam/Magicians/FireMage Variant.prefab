@@ -15,6 +15,10 @@ MonoBehaviour:
   m_defaultState: {fileID: 7461089544049557279}
   m_agent: {fileID: 7461089542506103595}
   m_animationsHandler: {fileID: 8901337810976003546}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
+  m_fireBallPrefab: {fileID: 6664158057745105654, guid: 85b21b92c4c8bdf498e3a772579d09ce,
+    type: 3}
 --- !u!114 &8901337810976003546
 MonoBehaviour:
   m_ObjectHideFlags: 0

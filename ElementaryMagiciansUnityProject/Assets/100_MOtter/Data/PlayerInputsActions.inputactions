@@ -12,6 +12,62 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FirstMage",
+                    "type": "Button",
+                    "id": "bb2c8d64-4737-4ebe-a465-5271f522fd2b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SecondMage",
+                    "type": "Button",
+                    "id": "4f690e00-4cc0-4fe7-8327-234cdad871bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ThirdMage",
+                    "type": "Button",
+                    "id": "cb6bb925-6aba-4827-bda3-85a1da62f1bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FourthMage",
+                    "type": "Button",
+                    "id": "b852c74a-72d3-4fab-9bfe-5db9bd36fd28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FifthMage",
+                    "type": "Button",
+                    "id": "e46e7b83-228a-4611-9907-7098c8dc8eec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SixthMage",
+                    "type": "Button",
+                    "id": "ef9f36d9-09d9-40db-abe0-f2b672844225",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SeventhMAge",
+                    "type": "Button",
+                    "id": "3c7cc025-1794-4439-bb1b-b63809c787bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -80,6 +136,83 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6c05ea80-a694-4711-b818-8890f30f28fe",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b159069e-b363-4cc2-bff4-bc49ed0ea686",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc541c2e-3900-4ada-9546-b4a2e36418a3",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThirdMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f353cf7-25d5-4ad8-82f8-26012cede38c",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FourthMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0279e93c-ed6c-4d60-9c0b-9ebaab14929d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FifthMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1016aab1-bb95-46b8-ba39-443a067ecd98",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SixthMage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95b84360-962f-4ec2-a477-236101a846e4",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SeventhMAge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
