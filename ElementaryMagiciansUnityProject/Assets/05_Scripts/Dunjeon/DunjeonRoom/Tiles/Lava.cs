@@ -1,22 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ElementaryMagicians.Combat
+namespace ElementaryMagicians.Dunjeon
 {
-    public class Lava : MonoBehaviour, IDamageDealer
+    public class Lava : Tile, Combat.IDamageDealer
     {
+        public Combat.CombatController Owner => null;
+
+
+        private Action<Combat.IDamageDealer> m_onDestroy = null;
+        public Action<Combat.IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
+
         [SerializeField]
-        private int m_damage = 20;
+        private Combat.DamageDealerType m_dealerType = null;
+        public Combat.DamageDealerType DealerType => m_dealerType;
+
         [SerializeField]
-        private float m_cooldown = 1f;
+        private Collider m_combatCollider = null;
 
-        public CombatController Owner => null;
-
-        public int DamagePerHit => m_damage;
-
-        public float CooldownDamage => m_cooldown;
-
-        private Action<IDamageDealer> m_onDestroy = null;
-        public Action<IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
+        public override void Init()
+        {
+            base.Init();
+            m_combatCollider.enabled = true;
+        }
     }
 }

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4057541406750090984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4057541406750090986}
+  - component: {fileID: 4057541406750090987}
+  m_Layer: 0
+  m_Name: DunjeonRoomGameMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4057541406750090986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057541406750090984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4057541407004162509}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4057541406750090987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057541406750090984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150e84fb04be9b84ea2a733011e9dbcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultState: {fileID: 4057541407004162514}
+  m_roomLength: 30
+  m_roomWidth: {x: 12, y: 20}
+  m_roomMaxWidthStep: 2
+  m_enterDoors: {fileID: 0}
+  m_roomParent: {fileID: 0}
+  m_playerSpawnPoint: {fileID: 0}
+  m_tileSize: 2
+  m_groundTile: {fileID: 6600867643630174896, guid: e81bd9cf3d7471f4481e7824e2faa89f,
+    type: 3}
+  m_lavaTile: {fileID: 5961119204922610848, guid: 6f113c8be374a304e931010366b6ed5d,
+    type: 3}
+  m_spikeTile: {fileID: 5049710305801603592, guid: 4230c4c673d84c440bd5040461536004,
+    type: 3}
+  m_voidTile: {fileID: 2613993750203369350, guid: df46854f2f57f5548b0852a3b3c5646b,
+    type: 3}
+  m_wallTile: {fileID: 146440206675185316, guid: 6eef13d3232ce0449979de73af8b234a,
+    type: 3}
+  m_doorTile: {fileID: 2494141444957538442, guid: 5e55dc546d0d7814dbb7ffe52ea4fc70,
+    type: 3}
+  m_numberOfLavaHoles: {x: 10, y: 15}
+  m_sizeOfLavaHoles: {x: 2, y: 4}
+  m_numberOfSpikesSpot: {x: 1, y: 2}
+  m_sizeOfSpikesSpot: {x: 4, y: 6}
+  m_numberOfVoidHoles: {x: 1, y: 2}
+  m_sizeOfVoidHoles: {x: 2, y: 4}
+  m_magePrisonPrefab: {fileID: 7788023610341835007, guid: dd66d9ea3bde0c04eab87cc967f37675,
+    type: 3}
+  m_magePrisonChanceToSpawnInPercent: 60
+  m_ennemiesToSpawnData:
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
+    EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 1, y: 3}
+    EnnemyToSpawnPrefab: {fileID: 1759823326020389925, guid: d3b805a7eafc19a4081a5dbd3939a920,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+    EnnemyToSpawnPrefab: {fileID: 1371183291684993931, guid: 7f5e9dff11948544ca78cab95b350a49,
+      type: 3}
+  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+    EnnemyToSpawnPrefab: {fileID: 8914587936295203618, guid: d531488b7ebb5e84dbe90dda0f914faa,
+      type: 3}
+  m_magicianTeamPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
+    type: 3}
+  m_roomSceneData: {fileID: 11400000, guid: 858a2cfdeb6101945b83ee7a8c06302c, type: 2}
+--- !u!1 &4057541407004162515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4057541407004162509}
+  - component: {fileID: 4057541407004162514}
+  m_Layer: 0
+  m_Name: GameplayState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4057541407004162509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057541407004162515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4057541406750090986}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4057541407004162514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057541407004162515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb088f03c38e694787c01b1a14964bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nextState: {fileID: 0}
+  m_panels:
+  - {fileID: 0}

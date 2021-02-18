@@ -16,6 +16,14 @@ namespace ElementaryMagicians.Ennemy
         private EnnemyAIState m_comingCloseToTarget = null;
         internal EnnemyAIState WalkingState => m_walkingState;
 
+        [SerializeField]
+        private MonsterAnimationsHandler m_animationsHandler = null;
+        internal MonsterAnimationsHandler AnimationsHandler => m_animationsHandler;
+
+        [SerializeField]
+        private Combat.CombatController m_combatController = null;
+        public Combat.CombatController CombatController => m_combatController;
+
         private List<Player.MagicianController> m_targets = new List<Player.MagicianController>();
         private Player.MagicianController m_closestTarget = null;
         private float m_sqrDistanceToClosestTarget = float.MaxValue;
@@ -26,7 +34,13 @@ namespace ElementaryMagicians.Ennemy
             base.EnterStateMachine();
             Agent.SetAreaCost(3, 10);
             Agent.SetAreaCost(4, 2);
+            m_combatController.Init();
+        }
 
+        public override void DoUpdate()
+        {
+            base.DoUpdate();
+            m_combatController.DoUpdate();
         }
 
         public override void DoLateUpdate()
@@ -61,6 +75,11 @@ namespace ElementaryMagicians.Ennemy
             {
                 m_targets.Add(magician);
             }
+        }
+
+        protected virtual void Attack()
+        {
+            
         }
 
         /*private void OnTriggerExit(Collider other)

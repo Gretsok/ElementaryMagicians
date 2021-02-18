@@ -8,9 +8,12 @@ namespace ElementaryMagicians.Combat
     {
         class DamageDealerData
         {
-            public IDamageDealer DamageDealer;
+            public List<IDamageDealer> DamageDealers = new List<IDamageDealer>();
             public float LastTimeHit = float.MinValue;
+            public DamageDealerType DealerType = null;
         }
+
+        public List<IDamageDealer> m_collidingDamageDealers = new List<IDamageDealer>();
         [SerializeField]
         private CombatController m_owner = null;
         private List<DamageDealerData> m_damageDealerDatas = new List<DamageDealerData>();
@@ -44,16 +47,29 @@ namespace ElementaryMagicians.Combat
 
         private void ManageDamageDealer()
         {
-            for(int i = 0; i < m_damageDealerDatas.Count; ++i)
+            for(int i = m_damageDealerDatas.Count - 1; i >= 0; --i)
             {
                 DamageDealerData currentDamageDealerData = m_damageDealerDatas[i];
-                if(Time.time - currentDamageDealerData.LastTimeHit > currentDamageDealerData.DamageDealer.CooldownDamage)
+
+                if (Time.time - currentDamageDealerData.LastTimeHit > currentDamageDealerData.DealerType.CooldownBetweenTwoDamages)
                 {
-                    if(currentDamageDealerData.DamageDealer.Owner == null || currentDamageDealerData.DamageDealer.Owner.TeamIndex != m_owner.TeamIndex)
+
+                    for (int j = currentDamageDealerData.DamageDealers.Count - 1; j >= 0; --j)
                     {
-                        TakeDamage(currentDamageDealerData.DamageDealer.DamagePerHit);
-                        currentDamageDealerData.LastTimeHit = Time.time;
+                        IDamageDealer currentDamageDealer = currentDamageDealerData.DamageDealers[j];
+                        if (!m_collidingDamageDealers.Contains(currentDamageDealer))
+                        {
+                            currentDamageDealerData.DamageDealers.Remove(currentDamageDealer);
+                        }
                     }
+
+                    if (currentDamageDealerData.DamageDealers.Count == 0)
+                    {
+                        m_damageDealerDatas.Remove(currentDamageDealerData);
+                        continue;
+                    }
+                    TakeDamage(currentDamageDealerData.DealerType.DamageToDeal);
+                    currentDamageDealerData.LastTimeHit = Time.time;
                 }
             }
         }
@@ -62,14 +78,23 @@ namespace ElementaryMagicians.Combat
         {
             if(other.TryGetComponent<IDamageDealer>(out IDamageDealer damageDealer))
             {
-                DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DamageDealer == damageDealer);
+                DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
                 if(damageDealerData == null)
                 {
                     damageDealerData = new DamageDealerData();
-                    damageDealerData.DamageDealer = damageDealer;
+                    damageDealerData.DealerType = damageDealer.DealerType;
+                    damageDealerData.DamageDealers.Add(damageDealer);
                     damageDealer.OnDestroy += OnDamageDealerDestroyed;
                     m_damageDealerDatas.Add(damageDealerData);
                 }
+                else
+                {
+                    if(!damageDealerData.DamageDealers.Contains(damageDealer))
+                    {
+                        damageDealerData.DamageDealers.Add(damageDealer);
+                    }
+                }
+                m_collidingDamageDealers.Add(damageDealer);
             }
         }
 
@@ -77,20 +102,16 @@ namespace ElementaryMagicians.Combat
         {
             if (other.TryGetComponent<IDamageDealer>(out IDamageDealer damageDealer))
             {
-                DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DamageDealer == damageDealer);
-                if(damageDealerData != null)
-                {
-                    m_damageDealerDatas.Remove(damageDealerData);
-                }
+                m_collidingDamageDealers.Remove(damageDealer);
             }
         }
 
         private void OnDamageDealerDestroyed(IDamageDealer damageDealer)
         {
-            DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DamageDealer == damageDealer);
-            if (damageDealerData != null)
+            DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
+            if (damageDealerData != null && damageDealerData.DamageDealers.Contains(damageDealer))
             {
-                m_damageDealerDatas.Remove(damageDealerData);
+                damageDealerData.DamageDealers.Remove(damageDealer);
             }
         }
     }

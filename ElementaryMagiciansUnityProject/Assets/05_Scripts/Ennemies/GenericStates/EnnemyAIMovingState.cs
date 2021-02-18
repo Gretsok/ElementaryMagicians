@@ -26,7 +26,8 @@ namespace ElementaryMagicians.Ennemy
         public override void LateUpdateState()
         {
             base.LateUpdateState();
-            if((m_owner.transform.position - m_positionToReach).sqrMagnitude < m_sqrDistanceToPositionToReachToChangePositionToReach)
+            m_owner.AnimationsHandler.SetSpeedRatio(m_owner.Agent.velocity.magnitude / m_owner.Agent.speed);
+            if ((m_owner.transform.position - m_positionToReach).sqrMagnitude < m_sqrDistanceToPositionToReachToChangePositionToReach)
             {
                 m_positionToReach = m_gamemode.GetGroundTile().Position + Vector3.up;
                 m_owner.Agent.SetDestination(m_positionToReach);

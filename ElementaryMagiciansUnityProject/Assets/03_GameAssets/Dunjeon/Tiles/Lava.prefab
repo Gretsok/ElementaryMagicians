@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6241023458186197112
 Transform:
@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &10760983947092172
 Transform:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 5052714609991651442}
   - component: {fileID: 626110391416603022}
   - component: {fileID: 2524313610449140950}
+  - component: {fileID: 4347000199504569339}
   m_Layer: 8
   m_Name: Lava
   m_TagString: Untagged
@@ -167,7 +168,7 @@ BoxCollider:
   m_GameObject: {fileID: 5961119204922610848}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 1.5, z: 0}
@@ -183,8 +184,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19befc2d6425f74d88d93427a75f20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 20
-  m_cooldown: 1
+  m_dealerType: {fileID: 11400000, guid: 6b8829395272fc349af0aac6c0fd9a95, type: 2}
+  m_combatCollider: {fileID: 626110391416603022}
+--- !u!65 &4347000199504569339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961119204922610848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &7250375677325654708
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8013954923624795790
 Transform:
@@ -5014,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a49d69e7c5a10946945ed7915dea43c,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3a49d69e7c5a10946945ed7915dea43c,
         type: 3}

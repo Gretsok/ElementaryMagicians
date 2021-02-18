@@ -17,6 +17,7 @@ namespace ElementaryMagicians.Ennemy
         public override void UpdateState()
         {
             base.UpdateState();
+            m_owner.AnimationsHandler.SetSpeedRatio(m_owner.Agent.velocity.magnitude / m_owner.Agent.speed);
             if(m_owner.ClosestTarget != null)
             {
                 if(Time.time - m_timeOfLastUpdate > m_updateDestinationDelay)
@@ -34,7 +35,6 @@ namespace ElementaryMagicians.Ennemy
             {
                 m_owner.SwitchToState(m_owner.WalkingState);
             }
-            
         }
 
         public override void ExitState()

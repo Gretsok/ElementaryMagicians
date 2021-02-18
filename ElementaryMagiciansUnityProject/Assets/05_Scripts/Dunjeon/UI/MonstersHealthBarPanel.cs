@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ElementaryMagicians.Dunjeon
 {
-    public class MageTeamHealthBarPanel : HealthBarPanel
+    public class MonstersHealthBarPanel : HealthBarPanel
     {
 
     }

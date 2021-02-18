@@ -4,8 +4,11 @@ using UnityEngine;
 
 namespace ElementaryMagicians.Dunjeon
 {
-    public class MageTeamHealthBarPanel : HealthBarPanel
+    public class Tile : MonoBehaviour
     {
+        public virtual void Init()
+        {
 
+        }
     }
 }

@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_teamTargetPosition: {fileID: 1191260518985724473}
-  m_speed: 5
+  m_speed: 4
   m_movingMask:
     serializedVersion: 2
     m_Bits: 2816

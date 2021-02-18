@@ -2,20 +2,18 @@
 using System;
 using UnityEngine;
 
-public class SpikesDamageCollider : MonoBehaviour, IDamageDealer
+namespace ElementaryMagicians.Dunjeon
 {
+    public class SpikesDamageCollider : MonoBehaviour, IDamageDealer
+    {
+        public CombatController Owner => null;
 
-    [SerializeField]
-    private int m_damage = 20;
-    [SerializeField]
-    private float m_cooldown = 2f;
 
-    public CombatController Owner => null;
+        private Action<IDamageDealer> m_onDestroy = null;
+        public Action<IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
 
-    public int DamagePerHit => m_damage;
-
-    public float CooldownDamage => m_cooldown;
-
-    private Action<IDamageDealer> m_onDestroy = null;
-    public Action<IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
+        [SerializeField]
+        private DamageDealerType m_dealerType = null;
+        public DamageDealerType DealerType => m_dealerType;
+    }
 }

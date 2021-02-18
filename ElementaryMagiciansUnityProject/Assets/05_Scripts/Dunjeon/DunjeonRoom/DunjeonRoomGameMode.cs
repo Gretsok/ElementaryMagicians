@@ -99,17 +99,17 @@ namespace ElementaryMagicians.Dunjeon
             Spikes,
             Void
         }
-        internal class Tile
+        internal class TileData
         {
 
             internal ETileType TileType = ETileType.Ground;
             internal Vector3 Position;
         }
-        private List<Tile> m_tiles = new List<Tile>();
+        private List<TileData> m_tiles = new List<TileData>();
 
-        internal Tile GetGroundTile()
+        internal TileData GetGroundTile()
         {
-            Tile tileToReturn = null;
+            TileData tileToReturn = null;
             while (tileToReturn == null || tileToReturn != null && tileToReturn.TileType != ETileType.Ground && tileToReturn.TileType != ETileType.FixedGround)
             {
                 int randomIndex = Random.Range(0, m_tiles.Count);
@@ -171,7 +171,7 @@ namespace ElementaryMagicians.Dunjeon
                 {
                     float currentX = m_enterDoors.transform.position.x + j * m_tileSize + m_tileSize /2;
 
-                    Tile newTile = new Tile();
+                    TileData newTile = new TileData();
                     if (j == 0)
                     {
                         newTile.TileType = ETileType.FixedGround;
@@ -187,7 +187,7 @@ namespace ElementaryMagicians.Dunjeon
                 for (int j = 0; j < width; ++j)
                 {
                     float currentX = m_enterDoors.transform.position.x + -j * m_tileSize - m_tileSize /2;
-                    Tile newTile = new Tile();
+                    TileData newTile = new TileData();
                     if(j == 0)
                     {
                         newTile.TileType = ETileType.FixedGround;
@@ -256,7 +256,7 @@ namespace ElementaryMagicians.Dunjeon
             int numberOfLavAHoles = Random.Range(m_numberOfLavaHoles.x, m_numberOfLavaHoles.y);
             for(int i = 0; i < numberOfLavAHoles; ++i)
             {
-                Tile randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
+                TileData randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
                 if(randomTile.TileType != ETileType.FixedGround)
                 {
                     randomTile.TileType = ETileType.Lava;
@@ -274,7 +274,7 @@ namespace ElementaryMagicians.Dunjeon
             int numberOfSpikesSpot = Random.Range(m_numberOfSpikesSpot.x, m_numberOfSpikesSpot.y);
             for (int i = 0; i < numberOfSpikesSpot; ++i)
             {
-                Tile randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
+                TileData randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
                 if (randomTile.TileType != ETileType.FixedGround)
                 {
                     randomTile.TileType = ETileType.Spikes;
@@ -290,7 +290,7 @@ namespace ElementaryMagicians.Dunjeon
             int numberOfVoidHoles = Random.Range(m_numberOfVoidHoles.x, m_numberOfVoidHoles.y);
             for (int i = 0; i < numberOfVoidHoles; ++i)
             {
-                Tile randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
+                TileData randomTile = m_tiles[Random.Range(0, m_tiles.Count)];
                 if (randomTile.TileType != ETileType.FixedGround)
                 {
                     randomTile.TileType = ETileType.Void;
@@ -321,6 +321,7 @@ namespace ElementaryMagicians.Dunjeon
 
             yield return null;
 
+            List<Tile> tiles = new List<Tile>();
             for (int i = 0; i < m_tiles.Count; ++i)
             {
                 if(m_tiles[i].TileType == ETileType.Ground || m_tiles[i].TileType == ETileType.FixedGround)
@@ -329,11 +330,11 @@ namespace ElementaryMagicians.Dunjeon
                 }
                 else if(m_tiles[i].TileType == ETileType.Lava)
                 {
-                    Instantiate(m_lavaTile, m_tiles[i].Position, Quaternion.identity, m_roomParent);
+                    tiles.Add(Instantiate(m_lavaTile, m_tiles[i].Position, Quaternion.identity, m_roomParent).GetComponent<Lava>());
                 }
                 else if(m_tiles[i].TileType == ETileType.Spikes)
                 {
-                    Instantiate(m_spikeTile, m_tiles[i].Position, Quaternion.identity, m_roomParent);
+                    tiles.Add(Instantiate(m_spikeTile, m_tiles[i].Position, Quaternion.identity, m_roomParent).GetComponent<Spikes>());
                 }
                 else if(m_tiles[i].TileType == ETileType.Void)
                 {
@@ -354,6 +355,15 @@ namespace ElementaryMagicians.Dunjeon
             yield return null;
             #endregion
 
+            yield return null;
+            for(int i = 0; i < tiles.Count; ++i)
+            {
+                if(tiles[i] != null)
+                {
+                    tiles[i].Init();
+                }
+            }
+
             InstantiatePlayer();
             yield return null;
             #region Spawning Ennemies
@@ -362,7 +372,7 @@ namespace ElementaryMagicians.Dunjeon
                 int numberOfEnnemiesToSpawn = Random.Range(m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.x, m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.y);
                 for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
                 {
-                    Tile tileToSpawnOn = GetGroundTile();
+                    TileData tileToSpawnOn = GetGroundTile();
                     m_ennemies.Add(Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity));
                 }
             }
@@ -376,7 +386,7 @@ namespace ElementaryMagicians.Dunjeon
                 Player.MageData mageDataToUse = m_magicianTeamController.GetRandomFreeMageData();
                 if(mageDataToUse != null)
                 {
-                    Tile tileToSpawnPrisonOn = GetGroundTile();
+                    TileData tileToSpawnPrisonOn = GetGroundTile();
                     MagePrison magePrison = Instantiate(m_magePrisonPrefab, tileToSpawnPrisonOn.Position + Vector3.up, Quaternion.identity);
                     magePrison.Inflate(mageDataToUse);
                     Debug.Log("Prison Spawned");
