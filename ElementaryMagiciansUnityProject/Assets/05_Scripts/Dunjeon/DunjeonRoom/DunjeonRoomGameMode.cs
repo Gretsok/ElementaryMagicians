@@ -88,6 +88,8 @@ namespace ElementaryMagicians.Dunjeon
         public Player.MagicianTeamController MagicianTeamController => m_magicianTeamController;
         [SerializeField]
         private ProjElf.SceneData.SceneData m_roomSceneData = null;
+        [SerializeField]
+        private SaveMeWidget m_saveMeWidget = null;
 
 
         private bool m_canLoadNextRoom = false;
@@ -394,6 +396,7 @@ namespace ElementaryMagicians.Dunjeon
                     MagePrison magePrison = Instantiate(m_magePrisonPrefab, tileToSpawnPrisonOn.Position + Vector3.up, Quaternion.identity);
                     magePrison.Inflate(mageDataToUse);
                     Debug.Log("Prison Spawned");
+                    m_saveMeWidget.Show();
                 }
             }
 

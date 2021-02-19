@@ -711,6 +711,11 @@ PrefabInstance:
       propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_saveMeWidget
+      value: 
+      objectReference: {fileID: 7768063638161779820}
     - target: {fileID: 4057541407004162514, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_panels.Array.size
@@ -944,6 +949,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 252e3a21fa83c7c4faa63789bc2b4579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7768063638161779820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2334504004259201890, guid: b6b1c58b149b1c444bba605e339a67de,
+    type: 3}
+  m_PrefabInstance: {fileID: 7768063638161779817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53fb37ba6cfa6140b7358b7606b8692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8445077530862037036
