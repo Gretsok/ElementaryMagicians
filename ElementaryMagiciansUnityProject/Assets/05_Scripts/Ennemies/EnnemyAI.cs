@@ -88,6 +88,11 @@ namespace ElementaryMagicians.Ennemy
             m_animationsHandler.Attack();
         }
 
+        internal void AddTarget(Player.MagicianController mage)
+        {
+            m_targets.Add(mage);
+        }
+
         #region EffectsManagement
         public void AddEffect(Combat.Effect effect)
         {

@@ -376,8 +376,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5513625489823766168}
   - component: {fileID: 6942464530082422173}
-  - component: {fileID: 8532179202804668009}
   - component: {fileID: 2627443367651074380}
+  - component: {fileID: 3513964091944749213}
   m_Layer: 0
   m_Name: CombatCollider
   m_TagString: Untagged
@@ -412,19 +412,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 1.5, z: 0.3}
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &8532179202804668009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372617530796807430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_owner: {fileID: 5530036204668701339}
 --- !u!54 &2627443367651074380
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -441,6 +428,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3513964091944749213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372617530796807430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90eb0d3e043ad9458a743c50ca916e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_owner: {fileID: 5530036204668701339}
 --- !u!1 &5075555635418395583
 GameObject:
   m_ObjectHideFlags: 0

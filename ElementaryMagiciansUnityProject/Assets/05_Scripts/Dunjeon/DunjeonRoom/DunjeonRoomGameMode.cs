@@ -385,6 +385,7 @@ namespace ElementaryMagicians.Dunjeon
             #endregion
             yield return null;
 
+            Random.InitState((new System.Random(GetHashCode() * (int) Time.time).Next(-100000, 10000)));
             int randomPercentToSpawnMagePrison = Random.Range(1, 101);
             Debug.Log("PRISON SPAWNING: " + randomPercentToSpawnMagePrison + " for " + m_magePrisonChanceToSpawnInPercent);
             if(randomPercentToSpawnMagePrison < m_magePrisonChanceToSpawnInPercent)

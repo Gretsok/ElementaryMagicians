@@ -48,7 +48,7 @@ namespace ElementaryMagicians.Combat
             m_owner?.RegisterNewCombatColliders(this);
         }
 
-        private void ManageDamageDealer()
+        protected virtual void ManageDamageDealer()
         {
             for(int i = m_damageDealerDatas.Count - 1; i >= 0; --i)
             {

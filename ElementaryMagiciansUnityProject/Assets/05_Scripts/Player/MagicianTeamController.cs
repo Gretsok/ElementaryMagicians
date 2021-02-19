@@ -275,6 +275,12 @@ namespace ElementaryMagicians.Player
         {
             return m_magiciansManager.GetRandomFreeMageData();
         }
+
+        public MagicianController GetRandomMagician()
+        {
+            int randomIndex = Random.Range(0, m_magiciansManager.Magicians.Count);
+            return m_magiciansManager.Magicians[randomIndex];
+        }
         #endregion
 
         #region Walker

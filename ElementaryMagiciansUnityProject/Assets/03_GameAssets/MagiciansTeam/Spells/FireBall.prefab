@@ -105,7 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_travelSpeed: 12
-  m_impactExplosionRadius: 0.7
   m_dealerType: {fileID: 11400000, guid: e34ccfb990c47eb46ade3175ed317c55, type: 2}
   m_explosion: {fileID: 6664158057026759615}
   m_fireBallObject: {fileID: 7572976782377551332}
@@ -120,7 +119,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6664158056451943920
 PrefabInstance:

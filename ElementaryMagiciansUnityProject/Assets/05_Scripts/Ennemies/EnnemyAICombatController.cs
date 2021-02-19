@@ -12,5 +12,6 @@ namespace ElementaryMagicians.Ennemy
             MOtter.MOtterApplication.GetInstance().GAMEMANAGER.GetCurrentMainStateMachine<Dunjeon.DunjeonRoomGameMode>().Ennemies.Remove(GetComponent<EnnemyAI>());
             Destroy(gameObject);
         }
+
     }
 }
