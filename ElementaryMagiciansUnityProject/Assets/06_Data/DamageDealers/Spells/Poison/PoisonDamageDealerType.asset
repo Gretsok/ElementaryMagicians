@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0bcdd620758f741bd083fd193b0740, type: 3}
   m_Name: PoisonDamageDealerType
   m_EditorClassIdentifier: 
-  m_damageToDeal: 35
+  m_damageToDeal: 60
   m_cooldownBetweenTwoDamages: 0.8
   m_individualDealers: 0
+  m_instantDamage: 0

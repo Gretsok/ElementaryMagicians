@@ -16,7 +16,7 @@ MonoBehaviour:
   m_agent: {fileID: 2021600328790372204}
   m_animationsHandler: {fileID: 5265911995115864559}
   m_fxManager: {fileID: 6358684739472012398}
-  m_primaryAttackCooldown: 3
+  m_primaryAttackCooldown: 5
   m_secondaryAttackCooldown: 3
   m_mageData: {fileID: 11400000, guid: bab29c36d65eb214ebe5aee06e777122, type: 2}
   m_rockWallPrefab: {fileID: 6814942799603845090, guid: 84e54ff8f08de654eb356c6f7c41f46c,

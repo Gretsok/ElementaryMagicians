@@ -656,42 +656,42 @@ PrefabInstance:
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
@@ -1015,31 +1015,6 @@ PrefabInstance:
     - target: {fileID: 8445077530670264642, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
-        type: 3}
-      propertyPath: m_UseGeometry
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
-        type: 3}
-      propertyPath: m_CollectObjects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
-        type: 3}
-      propertyPath: m_Center.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

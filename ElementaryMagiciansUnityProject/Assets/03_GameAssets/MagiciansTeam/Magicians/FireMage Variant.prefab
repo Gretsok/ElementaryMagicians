@@ -35,7 +35,7 @@ MonoBehaviour:
   m_agent: {fileID: 7461089542506103595}
   m_animationsHandler: {fileID: 8901337810976003546}
   m_fxManager: {fileID: 2574829414621943849}
-  m_primaryAttackCooldown: 3
+  m_primaryAttackCooldown: 2
   m_secondaryAttackCooldown: 3
   m_mageData: {fileID: 11400000, guid: 6e0acf0ee27b66948879251063104721, type: 2}
   m_fireBallPrefab: {fileID: 6664158057745105654, guid: 85b21b92c4c8bdf498e3a772579d09ce,

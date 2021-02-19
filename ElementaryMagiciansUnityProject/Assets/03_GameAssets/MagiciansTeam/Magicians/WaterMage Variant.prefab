@@ -35,7 +35,7 @@ MonoBehaviour:
   m_agent: {fileID: 963293254395703067}
   m_animationsHandler: {fileID: 724779270676893071}
   m_fxManager: {fileID: 5291433523477541913}
-  m_primaryAttackCooldown: 3
+  m_primaryAttackCooldown: 5
   m_secondaryAttackCooldown: 3
   m_mageData: {fileID: 11400000, guid: 49157abec320b3548854c7538f337c02, type: 2}
   m_amountHealedWhenSpellUsed: 150

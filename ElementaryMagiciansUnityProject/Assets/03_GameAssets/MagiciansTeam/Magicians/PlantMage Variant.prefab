@@ -35,7 +35,7 @@ MonoBehaviour:
   m_agent: {fileID: 2434472434868711230}
   m_animationsHandler: {fileID: 4173654708426923382}
   m_fxManager: {fileID: 7347700971640042556}
-  m_primaryAttackCooldown: 3
+  m_primaryAttackCooldown: 5
   m_secondaryAttackCooldown: 3
   m_mageData: {fileID: 11400000, guid: 6f5caf9b6ac86f34183bc39647b09431, type: 2}
   m_plantHealZonePrefab: {fileID: 2956547116720196158, guid: bca1bdf0811c7bc439f85334a409fe98,
