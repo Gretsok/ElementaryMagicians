@@ -285,9 +285,9 @@ namespace ElementaryMagicians.Player
 
                 m_teamTargetPosition.position = m_nextPositionInfos.point;
 
-                Debug.DrawLine(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
+                /*Debug.DrawLine(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
                     m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f + Vector3.down * 3f,
-                    Color.red, 10f);
+                    Color.red, 10f);*/
             }
             else if(Physics.SphereCast(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
                 0.5f,
@@ -296,9 +296,9 @@ namespace ElementaryMagicians.Player
 
                  m_teamTargetPosition.position = m_nextPositionInfos.point;
 
-                Debug.DrawLine(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
+                /*Debug.DrawLine(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
         m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f + Vector3.down * 3f,
-        Color.blue, 10f);
+        Color.blue, 10f);*/
 
             }
         }
