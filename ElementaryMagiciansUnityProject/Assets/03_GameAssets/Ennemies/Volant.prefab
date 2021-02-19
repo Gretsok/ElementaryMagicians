@@ -120,8 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_owner: {fileID: 8914587936295203618}
-  m_attackSpeed: 1
-  m_distanceToStartComingCloser: 2
+  m_attackSpeed: 2
+  m_distanceToStartComingCloser: 100
 --- !u!95 &6462932109153047950
 Animator:
   serializedVersion: 3
@@ -274,6 +274,8 @@ MonoBehaviour:
   m_comingCloseToTarget: {fileID: 8914587937182854286}
   m_animationsHandler: {fileID: 6681567944116888331}
   m_combatController: {fileID: 3197902951554463513}
+  m_volantProjectilePrefab: {fileID: 580432090441432407, guid: 31b4db24e9e7c234daca68c8300309d9,
+    type: 3}
 --- !u!195 &8914587936295203617
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -414,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_owner: {fileID: 8914587936295203618}
-  m_sqrDistanceToStartAttacking: 1.5
+  m_sqrDistanceToStartAttacking: 80
   m_attackState: {fileID: 5043700327274225295}
 --- !u!1001 &8914587936873243846
 PrefabInstance:
