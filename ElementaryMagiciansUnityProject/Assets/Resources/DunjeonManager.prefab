@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_magicianTeamControllerPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
     type: 3}
-  m_defaultMageData: {fileID: 11400000, guid: 9d03a2d96d2e1b04d80b4f90d98f01d1, type: 2}
+  m_defaultMageData: {fileID: 11400000, guid: bab29c36d65eb214ebe5aee06e777122, type: 2}

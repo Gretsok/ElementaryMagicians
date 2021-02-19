@@ -168,7 +168,7 @@ namespace ElementaryMagicians.Player
         private void ManageWorldCursorPosition()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out RaycastHit hit, 100f, m_cursorLayerMask))
+            if(Physics.Raycast(ray, out RaycastHit hit, 100f, m_cursorLayerMask, QueryTriggerInteraction.Ignore))
             {
                 m_worldCursorPosition = hit.point;
             }
