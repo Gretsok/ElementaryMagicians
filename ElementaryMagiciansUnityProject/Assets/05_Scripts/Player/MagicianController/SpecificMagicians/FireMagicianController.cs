@@ -15,7 +15,7 @@ namespace ElementaryMagicians.Player
             {
                 base.PrimaryAttack();
                 FireBall fireBall = Instantiate(m_fireBallPrefab);
-                fireBall.Init(transform.position, m_teamController.WorldCursorPosition, m_teamController.CombatController);
+                fireBall.Init(transform.position + Vector3.up, m_teamController.WorldCursorPosition + Vector3.up, m_teamController.CombatController);
                 fireBall.Cast();
             }
             catch (System.Exception e)

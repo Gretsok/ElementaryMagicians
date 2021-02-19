@@ -1,38 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5411506664572387585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7461089542506103590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787b7a327161bd14a835508a51e08fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_defaultState: {fileID: 7461089544049557279}
-  m_agent: {fileID: 7461089542506103595}
-  m_animationsHandler: {fileID: 8901337810976003546}
-  m_fxManager: {fileID: 2574829414621943849}
-  m_primaryAttackCooldown: 3
-  m_secondaryAttackCooldown: 3
-  m_fireBallPrefab: {fileID: 6664158057745105654, guid: 85b21b92c4c8bdf498e3a772579d09ce,
-    type: 3}
---- !u!114 &8901337810976003546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8129690539344585216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699d4753439a8634e8c18e245151800d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_animator: {fileID: 932510361220426915}
 --- !u!95 &932510361220426915
 Animator:
   serializedVersion: 3
@@ -52,6 +19,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5411506664572387585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7461089542506103590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787b7a327161bd14a835508a51e08fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultState: {fileID: 7461089544049557279}
+  m_agent: {fileID: 7461089542506103595}
+  m_animationsHandler: {fileID: 8901337810976003546}
+  m_fxManager: {fileID: 2574829414621943849}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
+  m_mageData: {fileID: 11400000, guid: 6e0acf0ee27b66948879251063104721, type: 2}
+  m_fireBallPrefab: {fileID: 6664158057745105654, guid: 85b21b92c4c8bdf498e3a772579d09ce,
+    type: 3}
+--- !u!114 &8901337810976003546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129690539344585216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699d4753439a8634e8c18e245151800d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 932510361220426915}
 --- !u!1001 &896918489777941030
 PrefabInstance:
   m_ObjectHideFlags: 0

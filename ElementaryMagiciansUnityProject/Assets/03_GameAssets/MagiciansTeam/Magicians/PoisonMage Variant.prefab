@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &984902715255155793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859499556445945986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d199d2532b32040b4ff79a0c95a207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultState: {fileID: 859499555036609723}
+  m_agent: {fileID: 859499556445945999}
+  m_animationsHandler: {fileID: 9098902183859727737}
+  m_fxManager: {fileID: 5754811525640543117}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
+  m_mageData: {fileID: 11400000, guid: 9d03a2d96d2e1b04d80b4f90d98f01d1, type: 2}
 --- !u!114 &9098902183859727737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,24 +51,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &984902715255155793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859499556445945986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d199d2532b32040b4ff79a0c95a207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_defaultState: {fileID: 859499555036609723}
-  m_agent: {fileID: 859499556445945999}
-  m_animationsHandler: {fileID: 9098902183859727737}
-  m_fxManager: {fileID: 5754811525640543117}
-  m_primaryAttackCooldown: 3
-  m_secondaryAttackCooldown: 3
 --- !u!1001 &807785119136115067
 PrefabInstance:
   m_ObjectHideFlags: 0

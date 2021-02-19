@@ -35,6 +35,10 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         protected float m_secondaryAttackCooldown = 3f;
 
+        [SerializeField]
+        private MageData m_mageData = null;
+        public MageData MageData => m_mageData;
+
 
         internal void Init(MagicianTeamController  magicianTeamController, Transform positionTarget, float speed)
         {

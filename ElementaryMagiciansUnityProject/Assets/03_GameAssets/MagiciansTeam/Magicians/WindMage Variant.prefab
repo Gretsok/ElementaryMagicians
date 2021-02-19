@@ -50,6 +50,7 @@ MonoBehaviour:
   m_fxManager: {fileID: 4586273912707343357}
   m_primaryAttackCooldown: 3
   m_secondaryAttackCooldown: 3
+  m_mageData: {fileID: 11400000, guid: 2c5b3609269e83f46874dd52adc917b6, type: 2}
   m_dashDuration: 0.5
   m_dashSpeed: 20
 --- !u!1001 &2340331152881148869

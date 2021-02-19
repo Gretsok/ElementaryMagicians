@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6546852569851174624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963293254395703062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a598ed03350b249ae3de0b81720428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_defaultState: {fileID: 963293252986344239}
-  m_agent: {fileID: 963293254395703067}
-  m_animationsHandler: {fileID: 724779270676893071}
-  m_fxManager: {fileID: 5291433523477541913}
-  m_primaryAttackCooldown: 3
-  m_secondaryAttackCooldown: 3
-  m_amountHealedWhenSpellUsed: 150
---- !u!114 &724779270676893071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7285940059952369577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699d4753439a8634e8c18e245151800d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_animator: {fileID: 2092819939857900750}
 --- !u!95 &2092819939857900750
 Animator:
   serializedVersion: 3
@@ -51,6 +19,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6546852569851174624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963293254395703062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a598ed03350b249ae3de0b81720428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultState: {fileID: 963293252986344239}
+  m_agent: {fileID: 963293254395703067}
+  m_animationsHandler: {fileID: 724779270676893071}
+  m_fxManager: {fileID: 5291433523477541913}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
+  m_mageData: {fileID: 11400000, guid: 49157abec320b3548854c7538f337c02, type: 2}
+  m_amountHealedWhenSpellUsed: 150
+--- !u!114 &724779270676893071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285940059952369577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699d4753439a8634e8c18e245151800d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 2092819939857900750}
 --- !u!1001 &5994585751636061703
 PrefabInstance:
   m_ObjectHideFlags: 0

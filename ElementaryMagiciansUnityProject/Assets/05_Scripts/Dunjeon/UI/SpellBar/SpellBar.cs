@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ElementaryMagicians.Dunjeon
 {
 
-    public class SpellBar : MonoBehaviour
+    public class SpellBar : Panel
     {
         [SerializeField] private List<SpellFrame> m_spellFrames = new List<SpellFrame>();
 

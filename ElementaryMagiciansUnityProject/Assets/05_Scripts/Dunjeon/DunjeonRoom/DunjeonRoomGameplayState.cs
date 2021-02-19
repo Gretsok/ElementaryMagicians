@@ -28,6 +28,7 @@ namespace ElementaryMagicians.Dunjeon
             }
             m_teamHealthBar = GetPanel<MageTeamHealthBarPanel>();
             m_monstersHealthBar = GetPanel<MonstersHealthBarPanel>();
+            m_gamemode.MagicianTeamController.SetSpellBar(GetPanel<SpellBar>());
         }
 
         public override void UpdateState()

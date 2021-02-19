@@ -9,8 +9,6 @@ namespace ElementaryMagicians.Player
     {
         [SerializeField]
         private float m_travelSpeed = 12f;
-        [SerializeField]
-        private float m_impactExplosionRadius = 0.7f;
 
         private CombatController m_owner = null;
         public CombatController Owner => m_owner;
@@ -63,7 +61,6 @@ namespace ElementaryMagicians.Player
                 m_touchedSomething = true;
                 m_explosion.Explode(m_owner);
                 m_fireBallObject.SetActive(false);
-                GetComponent<Collider>().enabled = false;
                 m_onDestroy?.Invoke(this);
             }
         }

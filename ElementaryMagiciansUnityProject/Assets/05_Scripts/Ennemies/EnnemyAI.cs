@@ -29,6 +29,10 @@ namespace ElementaryMagicians.Ennemy
         private float m_sqrDistanceToClosestTarget = float.MaxValue;
         internal Player.MagicianController ClosestTarget => m_closestTarget;
         internal float SqrDistanceToClosestTarget => m_sqrDistanceToClosestTarget;
+
+        private List<Combat.Effect> m_effectsApplied = new List<Combat.Effect>();
+        public List<Combat.Effect> EffectsApplied => m_effectsApplied;
+
         internal override void EnterStateMachine()
         {
             base.EnterStateMachine();
@@ -41,6 +45,7 @@ namespace ElementaryMagicians.Ennemy
         {
             base.DoUpdate();
             m_combatController.DoUpdate();
+            ManageEffects();
         }
 
         public override void DoLateUpdate()
@@ -82,15 +87,27 @@ namespace ElementaryMagicians.Ennemy
             
         }
 
-        /*private void OnTriggerExit(Collider other)
+        #region EffectsManagement
+        public void AddEffect(Combat.Effect effect)
         {
-            if (other.TryGetComponent<Player.MagicianController>(out Player.MagicianController magician))
+            effect.OnEffectStarted();
+            m_effectsApplied.Add(effect);
+        }
+
+        private void ManageEffects()
+        {
+            for(int i = m_effectsApplied.Count - 1; i >= 0; --i)
             {
-                if(m_targets.Contains(magician))
+                Combat.Effect currentEffect = m_effectsApplied[i];
+                if(!currentEffect.UpdateEffect())
                 {
-                    m_targets.Remove(magician);
+                    currentEffect.OnEffectEnded();
+                    m_effectsApplied.Remove(currentEffect);
                 }
             }
-        }*/
+        }
+        #endregion
+
+
     }
 }

@@ -46,6 +46,17 @@ namespace ElementaryMagicians.Player
 
         #endregion
 
+        private Dunjeon.SpellBar m_spellBar = null;
+
+        public void SetSpellBar(Dunjeon.SpellBar spellbar)
+        {
+            m_spellBar = spellbar;
+            for(int i = 0; i < m_magiciansManager.Magicians.Count; ++i)
+            {
+                m_spellBar.InflateNewMagicien(i, m_magiciansManager.Magicians[i].MageData);
+            }
+        }
+
         private void Start()
         {
             m_actions = new PlayerInputsActions();
@@ -223,6 +234,8 @@ namespace ElementaryMagicians.Player
             m_magiciansManager.AddMagician(mageData).Init(this,
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed);
+            m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
+                mageData);
         }
 
         public void AddMagician(MageData mageData, Vector3 spawnPosition)
@@ -231,6 +244,8 @@ namespace ElementaryMagicians.Player
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed,
                 spawnPosition);
+            m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
+                mageData);
         }
 
         public void InitAllMagicians()

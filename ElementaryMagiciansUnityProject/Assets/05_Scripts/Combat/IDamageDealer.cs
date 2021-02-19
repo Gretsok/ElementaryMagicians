@@ -10,5 +10,6 @@ namespace ElementaryMagicians.Combat
         CombatController Owner { get; }
         Action<IDamageDealer> OnDestroy { get; set; }
         DamageDealerType DealerType { get; }
+        GameObject gameObject { get; }
     }
 }

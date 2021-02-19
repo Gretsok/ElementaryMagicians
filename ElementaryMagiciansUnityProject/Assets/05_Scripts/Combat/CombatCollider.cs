@@ -6,6 +6,7 @@ namespace ElementaryMagicians.Combat
 {
     public class CombatCollider : MonoBehaviour
     {
+        [System.Serializable]
         class DamageDealerData
         {
             public List<IDamageDealer> DamageDealers = new List<IDamageDealer>();
@@ -16,6 +17,8 @@ namespace ElementaryMagicians.Combat
         public List<IDamageDealer> m_collidingDamageDealers = new List<IDamageDealer>();
         [SerializeField]
         private CombatController m_owner = null;
+        public CombatController Owner => m_owner;
+
         private List<DamageDealerData> m_damageDealerDatas = new List<DamageDealerData>();
 
         private void Start()
@@ -57,10 +60,31 @@ namespace ElementaryMagicians.Combat
                     for (int j = currentDamageDealerData.DamageDealers.Count - 1; j >= 0; --j)
                     {
                         IDamageDealer currentDamageDealer = currentDamageDealerData.DamageDealers[j];
+                        try
+                        {
+                            if(!currentDamageDealer.gameObject.activeInHierarchy)
+                            {
+                                if (!m_collidingDamageDealers.Contains(currentDamageDealer))
+                                {
+                                    m_collidingDamageDealers.Remove(currentDamageDealer);
+                                }
+                            }
+                        }
+                        catch (System.Exception)
+                        {
+                            if (!m_collidingDamageDealers.Contains(currentDamageDealer))
+                            {
+                                m_collidingDamageDealers.Remove(currentDamageDealer);
+                            }
+                        }
+
                         if (!m_collidingDamageDealers.Contains(currentDamageDealer))
                         {
                             currentDamageDealerData.DamageDealers.Remove(currentDamageDealer);
                         }
+
+                            
+ 
                     }
 
                     if (currentDamageDealerData.DamageDealers.Count == 0)

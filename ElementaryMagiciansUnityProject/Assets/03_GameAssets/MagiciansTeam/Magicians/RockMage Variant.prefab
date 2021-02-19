@@ -18,6 +18,7 @@ MonoBehaviour:
   m_fxManager: {fileID: 6358684739472012398}
   m_primaryAttackCooldown: 3
   m_secondaryAttackCooldown: 3
+  m_mageData: {fileID: 11400000, guid: bab29c36d65eb214ebe5aee06e777122, type: 2}
 --- !u!114 &5265911995115864559
 MonoBehaviour:
   m_ObjectHideFlags: 0
