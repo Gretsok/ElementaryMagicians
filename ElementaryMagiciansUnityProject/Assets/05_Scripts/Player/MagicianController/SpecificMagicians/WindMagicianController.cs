@@ -16,7 +16,7 @@ namespace ElementaryMagicians.Player
             try
             {
                 base.PrimaryAttack();
-                m_teamController.Dash(m_teamController.WorldCursorPosition, m_dashSpeed, m_dashDuration);
+                m_teamController.Dash(m_teamController.Direction * 10f + transform.position, m_dashSpeed, m_dashDuration);
             }
             catch (System.Exception e)
             {

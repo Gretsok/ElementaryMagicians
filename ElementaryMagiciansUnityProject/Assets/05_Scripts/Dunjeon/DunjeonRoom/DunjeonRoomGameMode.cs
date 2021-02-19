@@ -90,7 +90,9 @@ namespace ElementaryMagicians.Dunjeon
         private ProjElf.SceneData.SceneData m_roomSceneData = null;
         [SerializeField]
         private SaveMeWidget m_saveMeWidget = null;
-
+        [SerializeField]
+        private DoorAlertsWidget m_doorAlertsWidget = null;
+        private bool m_hasDisplayedDoorUnlockedAlert = false;
 
         private bool m_canLoadNextRoom = false;
 
@@ -428,9 +430,11 @@ namespace ElementaryMagicians.Dunjeon
                 Ennemy.EnnemyAI currentEnnemy = Ennemies[i];
                 m_currentEnnemyTotalLifePoints += currentEnnemy.CombatController.LifePoints;
             }
-            if(m_currentEnnemyTotalLifePoints == 0)
+            if(m_currentEnnemyTotalLifePoints == 0 && !m_hasDisplayedDoorUnlockedAlert)
             {
                 m_canLoadNextRoom = true;
+                m_doorAlertsWidget.AlertDoorUnlocked();
+                m_hasDisplayedDoorUnlockedAlert = true;
             }
         }
 
@@ -448,6 +452,10 @@ namespace ElementaryMagicians.Dunjeon
                 DunjeonManager.GetInstance().IncrementRoomsPassed();
                 m_roomSceneData.LoadLevel();
                 m_canLoadNextRoom = false;
+            }
+            else if(IsLoaded)
+            {
+                m_doorAlertsWidget.AlertDoorLocked();
             }
         }
 

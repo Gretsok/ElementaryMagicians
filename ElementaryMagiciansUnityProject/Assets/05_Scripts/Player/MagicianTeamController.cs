@@ -14,6 +14,7 @@ namespace ElementaryMagicians.Player
         [SerializeField]
         private LayerMask m_movingMask = 1;
         private Vector3 m_direction = Vector3.zero;
+        internal Vector3 Direction => m_direction;
 
         RaycastHit m_nextPositionInfos;
 

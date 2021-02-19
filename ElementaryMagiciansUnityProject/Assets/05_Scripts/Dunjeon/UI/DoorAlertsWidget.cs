@@ -14,6 +14,12 @@ namespace ElementaryMagicians.Dunjeon
         [SerializeField]
         private float m_doorUnlockedDisplayDuration = 3f;
 
+        private void Awake()
+        {
+            m_doorLockedObject.SetActive(false);
+            m_doorUnlockedObject.SetActive(false);
+        }
+
         public void AlertDoorLocked()
         {
             m_doorLockedObject.SetActive(true);
