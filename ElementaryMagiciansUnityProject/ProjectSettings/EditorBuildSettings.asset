@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/04_Scenes/MainMenu.unity
+    guid: 0dbed3d276a514348ab2cbe2c0dbf9f8
+  - enabled: 1
     path: Assets/04_Scenes/Dunjeons/DunjeonRoom.unity
     guid: dbc00f6ab33ac4a4caebb11ab14e3a8b
   m_configObjects: {}
