@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_magicianPrefab: {fileID: -5411506664572387585, guid: 7d0090b65861dc645b52faca0ca7ff74,
     type: 3}
+  m_primaryAttackIcon: {fileID: 21300000, guid: 997e2792ba74d354bb63805f7be1de7c,
+    type: 3}
