@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 103547443773405776}
   - component: {fileID: 4046174412492954700}
-  - component: {fileID: 3748195553796030165}
   - component: {fileID: 5065788197999414896}
+  - component: {fileID: 8237100546928932303}
   m_Layer: 0
   m_Name: CombatCollider
   m_TagString: Untagged
@@ -46,19 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &3748195553796030165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651137338305204858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_owner: {fileID: 8139332347959936874}
 --- !u!54 &5065788197999414896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,6 +62,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8237100546928932303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651137338305204858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90eb0d3e043ad9458a743c50ca916e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_owner: {fileID: 8139332347959936874}
 --- !u!1 &1759823325653237177
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_owner: {fileID: 1759823326020389925}
-  m_sqrDistanceToStartAttacking: 1.5
+  m_sqrDistanceToStartAttacking: 100
   m_attackState: {fileID: 720046595599026848}
 --- !u!1 &1759823326020389927
 GameObject:
@@ -222,6 +222,8 @@ MonoBehaviour:
   m_comingCloseToTarget: {fileID: 1759823325900981064}
   m_animationsHandler: {fileID: 2060859951161310939}
   m_combatController: {fileID: 8139332347959936874}
+  m_krokodokusProjectilePrefab: {fileID: 1218832294611340378, guid: 618a17897fdbe1b43ae3d82edc111a61,
+    type: 3}
 --- !u!195 &1759823326020389926
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -395,6 +397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_owner: {fileID: 1759823326020389925}
+  m_attackSpeed: 0.5
+  m_distanceToStartComingCloser: 120
 --- !u!95 &4625412647269403789
 Animator:
   serializedVersion: 3

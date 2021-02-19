@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5998275099359522136}
   - component: {fileID: 5905017387101826585}
-  - component: {fileID: 7718729425216772539}
   - component: {fileID: 2919398144997301434}
+  - component: {fileID: 4279283591172980775}
   m_Layer: 0
   m_Name: CombatCollider
   m_TagString: Untagged
@@ -46,19 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7718729425216772539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377415175634055746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83661ceca1fa24b9989590e440b536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_owner: {fileID: 3197902951554463513}
 --- !u!54 &2919398144997301434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,6 +62,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4279283591172980775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377415175634055746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90eb0d3e043ad9458a743c50ca916e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_owner: {fileID: 3197902951554463513}
 --- !u!1 &4220068808401235149
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_owner: {fileID: 8914587936295203618}
+  m_attackSpeed: 1
+  m_distanceToStartComingCloser: 2
 --- !u!95 &6462932109153047950
 Animator:
   serializedVersion: 3

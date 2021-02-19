@@ -12,7 +12,8 @@ namespace ElementaryMagicians.Ennemy
             base.ManageDamageDealer();
             for(int i = 0; i < m_collidingDamageDealers.Count; ++i)
             {
-                if(m_collidingDamageDealers[i].Owner.TryGetComponent<Player.MagicianTeamController>(out Player.MagicianTeamController mageTeam))
+                if(m_collidingDamageDealers[i].Owner != null
+                    && m_collidingDamageDealers[i].Owner.TryGetComponent<Player.MagicianTeamController>(out Player.MagicianTeamController mageTeam))
                 {
                     Owner.GetComponent<EnnemyAI>().AddTarget(mageTeam.GetRandomMagician());
                 }

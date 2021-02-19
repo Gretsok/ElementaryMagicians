@@ -674,22 +674,22 @@ PrefabInstance:
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.y
+      propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}

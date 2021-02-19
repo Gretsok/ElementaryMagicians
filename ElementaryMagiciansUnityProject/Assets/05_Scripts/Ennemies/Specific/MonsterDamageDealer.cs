@@ -7,7 +7,7 @@ namespace ElementaryMagicians.Ennemy
     public class MonsterDamageDealer : MonoBehaviour, Combat.IDamageDealer
     {
         [SerializeField]
-        private CombatController m_owner;
+        protected CombatController m_owner;
         public CombatController Owner => m_owner;
 
         public Action<IDamageDealer> OnDisappeared { get; set; }
