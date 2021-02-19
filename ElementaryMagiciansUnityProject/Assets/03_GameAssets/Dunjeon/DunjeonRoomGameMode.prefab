@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4057541407004162509}
+  - {fileID: 4362202148045614175}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,6 +74,7 @@ MonoBehaviour:
   m_magePrisonPrefab: {fileID: 7788023610341835007, guid: dd66d9ea3bde0c04eab87cc967f37675,
     type: 3}
   m_magePrisonChanceToSpawnInPercent: 60
+  m_loseState: {fileID: 3418638541076165845}
   m_ennemiesToSpawnData:
   - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
     EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
@@ -135,3 +137,48 @@ MonoBehaviour:
   m_nextState: {fileID: 0}
   m_panels:
   - {fileID: 0}
+--- !u!1 &4868817127386688363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4362202148045614175}
+  - component: {fileID: 3418638541076165845}
+  m_Layer: 0
+  m_Name: LoseState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4362202148045614175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868817127386688363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4057541406750090986}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3418638541076165845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868817127386688363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6668c9c6e351e18469e9d3107fb9ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nextState: {fileID: 0}
+  m_panels: []

@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191260518151959621}
   - component: {fileID: 1191260518151959622}
-  - component: {fileID: 4085202951377042343}
+  - component: {fileID: 2748599481400363066}
   m_Layer: 0
   m_Name: MagiciansTeamController
   m_TagString: Untagged
@@ -276,11 +276,11 @@ MonoBehaviour:
     m_Bits: 2816
   m_positionTargetsManager: {fileID: 1191260518985724474}
   m_magiciansManager: {fileID: 8563818394924393644}
-  m_combatController: {fileID: 4085202951377042343}
+  m_combatController: {fileID: 2748599481400363066}
   m_cursorLayerMask:
     serializedVersion: 2
     m_Bits: 2816
---- !u!114 &4085202951377042343
+--- !u!114 &2748599481400363066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191260518151959620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fa83592881f4048a8d132d2e07bcb4, type: 3}
+  m_Script: {fileID: 11500000, guid: a72a70105257a844f95bb98aca6e6006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLifePoints: 1000

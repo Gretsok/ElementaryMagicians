@@ -38,5 +38,13 @@ namespace ElementaryMagicians.Dunjeon
             }
             return m_teamController;
         }
+
+        private int m_numberOfRoomsPassed = 0;
+        internal int NumberOfRoomsPassed => m_numberOfRoomsPassed;
+
+        internal void IncrementRoomsPassed()
+        {
+            m_numberOfRoomsPassed++;
+        }
     }
 }

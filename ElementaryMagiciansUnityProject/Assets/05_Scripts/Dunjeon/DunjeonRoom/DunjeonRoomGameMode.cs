@@ -62,6 +62,10 @@ namespace ElementaryMagicians.Dunjeon
         [SerializeField]
         private int m_magePrisonChanceToSpawnInPercent = 20;
 
+        [Header("States")]
+        [SerializeField]
+        private DunjeonRoomLoseState m_loseState = null;
+
 
 
         [System.Serializable]
@@ -413,10 +417,15 @@ namespace ElementaryMagicians.Dunjeon
         {
             if(m_canLoadNextRoom)
             {
+                DunjeonManager.GetInstance().IncrementRoomsPassed();
                 m_roomSceneData.LoadLevel();
                 m_canLoadNextRoom = false;
             }
-            
+        }
+
+        internal void Lose()
+        {
+            SwitchToState(m_loseState);
         }
     }
 }

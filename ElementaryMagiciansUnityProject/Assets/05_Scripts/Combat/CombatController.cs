@@ -12,6 +12,8 @@ namespace ElementaryMagicians.Combat
         public int MaxLifePoints => m_maxLifePoints;
         public int LifePoints => m_lifePoints;
 
+        private bool m_isAlive = true;
+
         [SerializeField]
         private int m_teamIndex = 0;
         internal int TeamIndex => m_teamIndex;
@@ -43,13 +45,13 @@ namespace ElementaryMagicians.Combat
 
         protected virtual void Die()
         {
-
+            m_isAlive = false;
         }
 
         internal void TakeDamage(int damage)
         {
             m_lifePoints -= damage;
-            if(m_lifePoints <= 0)
+            if(m_lifePoints <= 0 && m_isAlive)
             {
                 Die();
             }
