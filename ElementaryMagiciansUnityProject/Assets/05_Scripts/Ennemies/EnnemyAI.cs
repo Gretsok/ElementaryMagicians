@@ -15,6 +15,7 @@ namespace ElementaryMagicians.Ennemy
         [SerializeField]
         private EnnemyAIState m_comingCloseToTarget = null;
         internal EnnemyAIState WalkingState => m_walkingState;
+        internal EnnemyAIState ComingCloseToTarget => m_comingCloseToTarget;
 
         [SerializeField]
         private MonsterAnimationsHandler m_animationsHandler = null;
@@ -68,7 +69,7 @@ namespace ElementaryMagicians.Ennemy
                 }
             }
             m_sqrDistanceToClosestTarget = sqrDistanceOfClosestTarget;
-            if(m_closestTarget != null && m_currentState != m_comingCloseToTarget)
+            if(m_closestTarget != null && m_currentState == m_walkingState)
             {
                 SwitchToState(m_comingCloseToTarget);
             }
@@ -82,9 +83,9 @@ namespace ElementaryMagicians.Ennemy
             }
         }
 
-        protected virtual void Attack()
+        internal virtual void Attack()
         {
-            
+            m_animationsHandler.Attack();
         }
 
         #region EffectsManagement

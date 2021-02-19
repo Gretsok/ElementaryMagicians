@@ -25,11 +25,10 @@ namespace ElementaryMagicians.Ennemy
                     m_owner.Agent.SetDestination(m_owner.ClosestTarget.transform.position);
                     m_timeOfLastUpdate = Time.time;
                 }
-                
-            }
-            else if(m_owner.SqrDistanceToClosestTarget < m_sqrDistanceToStartAttacking)
-            {
-                m_owner.SwitchToState(m_attackState);
+                if (m_owner.SqrDistanceToClosestTarget < m_sqrDistanceToStartAttacking)
+                {
+                    m_owner.SwitchToState(m_attackState);
+                }
             }
             else
             {

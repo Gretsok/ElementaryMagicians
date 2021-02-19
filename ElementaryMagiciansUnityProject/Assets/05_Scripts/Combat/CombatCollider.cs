@@ -110,7 +110,7 @@ namespace ElementaryMagicians.Combat
                         damageDealerData = new DamageDealerData();
                         damageDealerData.DealerType = damageDealer.DealerType;
                         damageDealerData.DamageDealers.Add(damageDealer);
-                        damageDealer.OnDestroy += OnDamageDealerDestroyed;
+                        damageDealer.OnDisappeared += OnDamageDealerDestroyed;
                         m_damageDealerDatas.Add(damageDealerData);
                     }
                     else
@@ -118,7 +118,7 @@ namespace ElementaryMagicians.Combat
                         if (!damageDealerData.DamageDealers.Contains(damageDealer))
                         {
                             damageDealerData.DamageDealers.Add(damageDealer);
-                            damageDealer.OnDestroy += OnDamageDealerDestroyed;
+                            damageDealer.OnDisappeared += OnDamageDealerDestroyed;
                         }
                     }
                     m_collidingDamageDealers.Add(damageDealer);

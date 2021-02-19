@@ -54,6 +54,7 @@ namespace ElementaryMagicians.Player
             for(int i = 0; i < m_magiciansManager.Magicians.Count; ++i)
             {
                 m_spellBar.InflateNewMagicien(i, m_magiciansManager.Magicians[i].MageData);
+                m_magiciansManager.Magicians[i].SetSpellFrame(m_spellBar.SpellFrames[i]);
             }
         }
 
@@ -234,8 +235,13 @@ namespace ElementaryMagicians.Player
             m_magiciansManager.AddMagician(mageData).Init(this,
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed);
-            m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
+            if (m_spellBar != null)
+            {
+                m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
                 mageData);
+                m_magiciansManager.Magicians[m_magiciansManager.Magicians.Count - 1].SetSpellFrame(
+                m_spellBar.SpellFrames[m_magiciansManager.Magicians.Count - 1]);
+            }
         }
 
         public void AddMagician(MageData mageData, Vector3 spawnPosition)
@@ -244,8 +250,15 @@ namespace ElementaryMagicians.Player
                 m_positionTargetsManager.PositionTargets[m_magiciansManager.Magicians.Count - 1],
                 m_speed,
                 spawnPosition);
-            m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
+           
+            if(m_spellBar != null)
+            {
+                m_spellBar?.InflateNewMagicien(m_magiciansManager.Magicians.Count - 1,
                 mageData);
+                m_magiciansManager.Magicians[m_magiciansManager.Magicians.Count - 1].SetSpellFrame(
+                m_spellBar.SpellFrames[m_magiciansManager.Magicians.Count - 1]);
+            }
+            
         }
 
         public void InitAllMagicians()

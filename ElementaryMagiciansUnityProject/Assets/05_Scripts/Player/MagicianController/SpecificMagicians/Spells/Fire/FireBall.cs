@@ -14,7 +14,7 @@ namespace ElementaryMagicians.Player
         public CombatController Owner => m_owner;
 
         private Action<IDamageDealer> m_onDestroy = null;
-        public Action<IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
+        public Action<IDamageDealer> OnDisappeared { get => m_onDestroy; set => m_onDestroy = value; }
         [SerializeField]
         private DamageDealerType m_dealerType = null;
         public DamageDealerType DealerType => m_dealerType;
@@ -31,6 +31,7 @@ namespace ElementaryMagicians.Player
         {
             
             transform.position = position;
+            lookAtTarget.y = transform.position.y;
             transform.LookAt(lookAtTarget);
             m_owner = owner;
         }
@@ -63,6 +64,11 @@ namespace ElementaryMagicians.Player
                 m_fireBallObject.SetActive(false);
                 m_onDestroy?.Invoke(this);
             }
+        }
+
+        private void OnDestroy()
+        {
+            m_onDestroy?.Invoke(this);
         }
     }
 }

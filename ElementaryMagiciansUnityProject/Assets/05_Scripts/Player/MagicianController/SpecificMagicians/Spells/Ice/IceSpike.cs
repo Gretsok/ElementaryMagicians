@@ -17,7 +17,7 @@ namespace ElementaryMagicians.Player
         private CombatController m_owner = null;
         public CombatController Owner => m_owner;
 
-        public Action<IDamageDealer> OnDestroy { get; set; }
+        public Action<IDamageDealer> OnDisappeared { get; set; }
 
         [SerializeField]
         private DamageDealerType m_damageDealerType = null;
@@ -38,6 +38,7 @@ namespace ElementaryMagicians.Player
         {
 
             transform.position = position;
+            lookAtTarget.y = transform.position.y;
             transform.LookAt(lookAtTarget);
             m_owner = owner;
         }
@@ -67,7 +68,7 @@ namespace ElementaryMagicians.Player
                 m_isTraveling = false;
                 m_touchedSomething = true;
                 m_explosion.Explode(m_owner);
-                OnDestroy?.Invoke(this);
+                OnDisappeared?.Invoke(this);
                 if (other.TryGetComponent<CombatCollider>(out CombatCollider combatCollider) 
                     && combatCollider.Owner.TryGetComponent<Ennemy.EnnemyAI>(out Ennemy.EnnemyAI ennemy))
                 {
@@ -83,6 +84,11 @@ namespace ElementaryMagicians.Player
 
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            OnDisappeared?.Invoke(this);
         }
     }
 }

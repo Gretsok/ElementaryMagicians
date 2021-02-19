@@ -39,6 +39,12 @@ namespace ElementaryMagicians.Player
         private MageData m_mageData = null;
         public MageData MageData => m_mageData;
 
+        private Dunjeon.SpellFrame m_magicianSpellFrame = null;
+
+        public void SetSpellFrame(Dunjeon.SpellFrame spellFrame)
+        {
+            m_magicianSpellFrame = spellFrame;
+        }
 
         internal void Init(MagicianTeamController  magicianTeamController, Transform positionTarget, float speed)
         {
@@ -79,7 +85,7 @@ namespace ElementaryMagicians.Player
             {
                 m_cooldown -= Time.deltaTime;
             }
-            
+            m_magicianSpellFrame?.SetCooldown(m_cooldown);
         }
 
         internal virtual void PrimaryAttack()

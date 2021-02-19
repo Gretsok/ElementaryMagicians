@@ -9,7 +9,7 @@ namespace ElementaryMagicians.Dunjeon
 
 
         private Action<Combat.IDamageDealer> m_onDestroy = null;
-        public Action<Combat.IDamageDealer> OnDestroy { get => m_onDestroy; set => m_onDestroy = value; }
+        public Action<Combat.IDamageDealer> OnDisappeared { get => m_onDestroy; set => m_onDestroy = value; }
 
         [SerializeField]
         private Combat.DamageDealerType m_dealerType = null;

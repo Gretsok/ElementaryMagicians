@@ -8,7 +8,7 @@ namespace ElementaryMagicians.Player
     {
         public CombatController Owner { get; set; } = null;
 
-        public Action<IDamageDealer> OnDestroy { get; set; } = null;
+        public Action<IDamageDealer> OnDisappeared { get; set; } = null;
 
         [SerializeField]
         private DamageDealerType m_dealerType = null;
@@ -41,7 +41,7 @@ namespace ElementaryMagicians.Player
             }
             else if(Time.time - m_timeOfSpawn > m_lifeSpan)
             {
-                OnDestroy?.Invoke(this);
+                OnDisappeared?.Invoke(this);
                 Destroy(gameObject);
             }
             

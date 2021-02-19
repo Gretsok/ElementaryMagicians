@@ -8,7 +8,7 @@ namespace ElementaryMagicians.Combat
     public interface IDamageDealer
     {
         CombatController Owner { get; }
-        Action<IDamageDealer> OnDestroy { get; set; }
+        Action<IDamageDealer> OnDisappeared { get; set; }
         DamageDealerType DealerType { get; }
         GameObject gameObject { get; }
     }

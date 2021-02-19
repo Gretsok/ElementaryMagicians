@@ -15,7 +15,7 @@ namespace ElementaryMagicians.Player
         private CombatController m_owner = null;
         public CombatController Owner => m_owner;
 
-        public Action<IDamageDealer> OnDestroy { get; set; }
+        public Action<IDamageDealer> OnDisappeared { get; set; }
 
         [SerializeField]
         private DamageDealerType m_dealerType = null;
@@ -42,7 +42,7 @@ namespace ElementaryMagicians.Player
                 else
                 {
                     GetComponentInParent<Transform>().gameObject.SetActive(false);
-                    OnDestroy?.Invoke(this);
+                    OnDisappeared?.Invoke(this);
                 }
             }
         }
