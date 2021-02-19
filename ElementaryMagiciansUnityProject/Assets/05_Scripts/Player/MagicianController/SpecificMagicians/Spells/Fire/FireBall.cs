@@ -50,7 +50,9 @@ namespace ElementaryMagicians.Player
             }
             else if(m_touchedSomething)
             {
+                m_onDestroy?.Invoke(this);
                 m_explosion.DoFixedUpdate();
+                m_touchedSomething = false;
             }
         }
 
@@ -62,7 +64,7 @@ namespace ElementaryMagicians.Player
                 m_touchedSomething = true;
                 m_explosion.Explode(m_owner);
                 m_fireBallObject.SetActive(false);
-                m_onDestroy?.Invoke(this);
+                
             }
         }
 

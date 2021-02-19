@@ -104,26 +104,33 @@ namespace ElementaryMagicians.Combat
             {
                 if(damageDealer.Owner == null || damageDealer.Owner.TeamIndex != m_owner.TeamIndex)
                 {
-                    DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
-                    if (damageDealerData == null || damageDealerData.DealerType.IndividualDealers)
+                    if(damageDealer.DealerType.InstantDamage)
                     {
-                        damageDealerData = new DamageDealerData();
-                        damageDealerData.DealerType = damageDealer.DealerType;
-                        damageDealerData.DamageDealers.Add(damageDealer);
-                        damageDealer.OnDisappeared += OnDamageDealerDestroyed;
-                        m_damageDealerDatas.Add(damageDealerData);
+                        TakeDamage(damageDealer.DealerType.DamageToDeal);
                     }
                     else
                     {
-                        if (!damageDealerData.DamageDealers.Contains(damageDealer))
+                        DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
+                        if (damageDealerData == null || damageDealerData.DealerType.IndividualDealers)
                         {
+                            damageDealerData = new DamageDealerData();
+                            damageDealerData.DealerType = damageDealer.DealerType;
                             damageDealerData.DamageDealers.Add(damageDealer);
                             damageDealer.OnDisappeared += OnDamageDealerDestroyed;
+                            m_damageDealerDatas.Add(damageDealerData);
                         }
+                        else
+                        {
+                            if (!damageDealerData.DamageDealers.Contains(damageDealer))
+                            {
+                                damageDealerData.DamageDealers.Add(damageDealer);
+                                damageDealer.OnDisappeared += OnDamageDealerDestroyed;
+                            }
+                        }
+                        
                     }
                     m_collidingDamageDealers.Add(damageDealer);
                 }
-                
             }
         }
 
@@ -137,11 +144,7 @@ namespace ElementaryMagicians.Combat
 
         private void OnDamageDealerDestroyed(IDamageDealer damageDealer)
         {
-            DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
-            if (damageDealerData != null && damageDealerData.DamageDealers.Contains(damageDealer))
-            {
-                damageDealerData.DamageDealers.Remove(damageDealer);
-            }
+            m_collidingDamageDealers.Remove(damageDealer);
         }
     }
 }

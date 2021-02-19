@@ -94,6 +94,10 @@ namespace ElementaryMagicians.Dunjeon
 
         private bool m_canLoadNextRoom = false;
 
+        int m_ennemyTotalMaxLifePoints = 0;
+        int m_currentEnnemyTotalLifePoints = 0;
+        public int EnnemyTotalMaxLifePoints => m_ennemyTotalMaxLifePoints;
+        public int CurrentEnnemyTotalLifePoints => m_currentEnnemyTotalLifePoints;
 
 
         #region Tiling
@@ -407,7 +411,27 @@ namespace ElementaryMagicians.Dunjeon
         internal override void EnterStateMachine()
         {
             base.EnterStateMachine();
-            m_canLoadNextRoom = true;
+            //m_canLoadNextRoom = true;
+            m_ennemyTotalMaxLifePoints = 0;
+            for (int i = Ennemies.Count - 1; i >= 0; --i)
+            {
+                m_ennemyTotalMaxLifePoints += Ennemies[i].CombatController.MaxLifePoints;
+            }
+        }
+
+        public override void DoLateUpdate()
+        {
+            base.DoLateUpdate();
+            m_currentEnnemyTotalLifePoints = 0;
+            for (int i = Ennemies.Count - 1; i >= 0; --i)
+            {
+                Ennemy.EnnemyAI currentEnnemy = Ennemies[i];
+                m_currentEnnemyTotalLifePoints += currentEnnemy.CombatController.LifePoints;
+            }
+            if(m_currentEnnemyTotalLifePoints == 0)
+            {
+                m_canLoadNextRoom = true;
+            }
         }
 
         private void InstantiatePlayer()

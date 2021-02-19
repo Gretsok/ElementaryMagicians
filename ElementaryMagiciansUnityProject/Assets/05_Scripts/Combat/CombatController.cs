@@ -7,8 +7,8 @@ namespace ElementaryMagicians.Combat
     public class CombatController : MonoBehaviour
     {
         [SerializeField]
-        private int m_maxLifePoints = 1000;
-        private int m_lifePoints = 0;
+        protected int m_maxLifePoints = 1000;
+        protected int m_lifePoints = 0;
         public int MaxLifePoints => m_maxLifePoints;
         public int LifePoints => m_lifePoints;
 
@@ -30,7 +30,7 @@ namespace ElementaryMagicians.Combat
             m_combatColliders.Remove(combatCollider);
         }
 
-        public void Init()
+        public virtual void Init()
         {
             m_lifePoints = m_maxLifePoints;
         }

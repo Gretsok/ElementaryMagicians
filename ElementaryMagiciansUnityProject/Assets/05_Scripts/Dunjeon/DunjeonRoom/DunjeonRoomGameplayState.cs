@@ -9,7 +9,7 @@ namespace ElementaryMagicians.Dunjeon
         private MageTeamHealthBarPanel m_teamHealthBar = null;
         private MonstersHealthBarPanel m_monstersHealthBar = null;
 
-        int m_ennemyTotalMaxLifePoints = 0;
+
 
         private void Start()
         {
@@ -19,12 +19,12 @@ namespace ElementaryMagicians.Dunjeon
         public override void EnterState()
         {
             base.EnterState();
-            m_ennemyTotalMaxLifePoints = 0;
+            
             for (int i = m_gamemode.Ennemies.Count - 1; i >= 0; --i)
             {
                 Ennemy.EnnemyAI currentEnnemy = m_gamemode.Ennemies[i];
                 currentEnnemy.EnterStateMachine();
-                m_ennemyTotalMaxLifePoints += currentEnnemy.CombatController.MaxLifePoints;
+
             }
             m_teamHealthBar = GetPanel<MageTeamHealthBarPanel>();
             m_monstersHealthBar = GetPanel<MonstersHealthBarPanel>();
@@ -59,22 +59,22 @@ namespace ElementaryMagicians.Dunjeon
             base.LateUpdateState();
             m_gamemode.MagicianTeamController.DoLateUpdate();
 
-            m_teamHealthBar.SetHealth(
-    (float)m_gamemode.MagicianTeamController.CombatController.LifePoints
-    / (float)m_gamemode.MagicianTeamController.CombatController.MaxLifePoints);
 
-            int currentEnnemiesLife = 0;
+            m_teamHealthBar.SetHealth(
+            (float)m_gamemode.MagicianTeamController.CombatController.LifePoints
+            / (float)m_gamemode.MagicianTeamController.CombatController.MaxLifePoints);
+
+            
 
             for (int i = m_gamemode.Ennemies.Count - 1; i >= 0; --i)
             {
                 Ennemy.EnnemyAI currentEnnemy = m_gamemode.Ennemies[i];
                 currentEnnemy.DoLateUpdate();
-                currentEnnemiesLife += currentEnnemy.CombatController.LifePoints;
             }
 
             m_monstersHealthBar.SetHealth(
-                (float) currentEnnemiesLife /
-                (float) m_ennemyTotalMaxLifePoints);
+                (float)m_gamemode.CurrentEnnemyTotalLifePoints /
+                (float) m_gamemode.EnnemyTotalMaxLifePoints);
         }
 
         public override void ExitState()
