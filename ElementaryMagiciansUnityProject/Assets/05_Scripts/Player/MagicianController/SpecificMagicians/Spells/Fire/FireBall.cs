@@ -57,14 +57,14 @@ namespace ElementaryMagicians.Player
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.tag != "Player")
+            if(other.tag != "Player" && m_isTraveling)
             {
                 m_isTraveling = false;
                 m_touchedSomething = true;
                 m_explosion.Explode(m_owner);
                 m_fireBallObject.SetActive(false);
                 GetComponent<Collider>().enabled = false;
-                m_onDestroy.Invoke(this);
+                m_onDestroy?.Invoke(this);
             }
         }
     }

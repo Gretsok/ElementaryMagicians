@@ -7,6 +7,10 @@ using UnityEngine.AI;
 
 namespace ElementaryMagicians.Player
 {
+    internal class OnCooldownException : System.Exception
+    {
+
+    }
     public class MagicianController : StatesMachine
     {
         private Transform m_positionTarget = null;
@@ -19,6 +23,10 @@ namespace ElementaryMagicians.Player
         internal MagicianAnimationHandler AnimationHandler => m_animationsHandler;
         protected MagicianTeamController m_teamController = null;
 
+        [SerializeField]
+        private MagicianFXManager m_fxManager = null;
+        internal MagicianFXManager FXManager => m_fxManager;
+
         protected float m_cooldown = 0f;
         public float Cooldown => m_cooldown;
 
@@ -28,7 +36,7 @@ namespace ElementaryMagicians.Player
         protected float m_secondaryAttackCooldown = 3f;
 
 
-        internal void Init(MagicianTeamController magicianTeamController, Transform positionTarget, float speed)
+        internal void Init(MagicianTeamController  magicianTeamController, Transform positionTarget, float speed)
         {
             transform.position = positionTarget.position;
             m_positionTarget = positionTarget;
@@ -74,7 +82,7 @@ namespace ElementaryMagicians.Player
         {
             if(m_cooldown > 0)
             {
-                return;
+                throw new OnCooldownException();
             }
             m_cooldown = m_primaryAttackCooldown;
         }
@@ -83,7 +91,7 @@ namespace ElementaryMagicians.Player
         {
             if (m_cooldown > 0)
             {
-                return;
+                throw new OnCooldownException();
             }
             m_cooldown = m_secondaryAttackCooldown;
         }

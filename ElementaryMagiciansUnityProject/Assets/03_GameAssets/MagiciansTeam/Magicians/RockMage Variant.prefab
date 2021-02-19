@@ -15,6 +15,9 @@ MonoBehaviour:
   m_defaultState: {fileID: 2021600328454886232}
   m_agent: {fileID: 2021600328790372204}
   m_animationsHandler: {fileID: 5265911995115864559}
+  m_fxManager: {fileID: 6358684739472012398}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
 --- !u!114 &5265911995115864559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +241,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95015fdb6051de448c220a037fd387c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6358684739472012398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2296608329730687032, guid: 95475a665f179054f807ecb5c9331731,
+    type: 3}
+  m_PrefabInstance: {fileID: 5179604729572897878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b070849f8084db94095ddb73972a9742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5866314605800034909

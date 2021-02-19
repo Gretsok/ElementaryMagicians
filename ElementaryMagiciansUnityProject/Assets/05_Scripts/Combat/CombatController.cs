@@ -54,5 +54,12 @@ namespace ElementaryMagicians.Combat
                 Die();
             }
         }
+
+        internal void Heal(int healthToRecover)
+        {
+            m_lifePoints += healthToRecover;
+            m_lifePoints = Mathf.Clamp(m_lifePoints, 0, m_maxLifePoints);
+        }
+
     }
 }

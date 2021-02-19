@@ -15,6 +15,10 @@ MonoBehaviour:
   m_defaultState: {fileID: 963293252986344239}
   m_agent: {fileID: 963293254395703067}
   m_animationsHandler: {fileID: 724779270676893071}
+  m_fxManager: {fileID: 5291433523477541913}
+  m_primaryAttackCooldown: 3
+  m_secondaryAttackCooldown: 3
+  m_amountHealedWhenSpellUsed: 150
 --- !u!114 &724779270676893071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +242,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95015fdb6051de448c220a037fd387c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5291433523477541913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2296608329730687032, guid: 95475a665f179054f807ecb5c9331731,
+    type: 3}
+  m_PrefabInstance: {fileID: 6246989502409471009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b070849f8084db94095ddb73972a9742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6838865475388282002

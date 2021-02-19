@@ -39,6 +39,11 @@ namespace ElementaryMagicians.Player
                     transform.position += velocity;
                     m_distanceTravelled += velocity.magnitude;
                 }
+                else
+                {
+                    GetComponentInParent<Transform>().gameObject.SetActive(false);
+                    OnDestroy?.Invoke(this);
+                }
             }
         }
 

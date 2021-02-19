@@ -10,11 +10,21 @@ namespace ElementaryMagicians.Player
         private FireBall m_fireBallPrefab = null;
 
         internal override void PrimaryAttack()
-        {
-            base.PrimaryAttack();
-            FireBall fireBall = Instantiate(m_fireBallPrefab);
-            fireBall.Init(transform.position, transform.position + transform.forward, m_teamController.CombatController);
-            fireBall.Cast();
+        {            
+            try
+            {
+                base.PrimaryAttack();
+                FireBall fireBall = Instantiate(m_fireBallPrefab);
+                fireBall.Init(transform.position, m_teamController.WorldCursorPosition, m_teamController.CombatController);
+                fireBall.Cast();
+            }
+            catch (System.Exception e)
+            {
+                if (e is OnCooldownException)
+                {
+                    Debug.LogWarning("Spell is on cooldown");
+                }
+            }
         }
 
         internal override void SecondaryAttack()

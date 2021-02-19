@@ -78,23 +78,28 @@ namespace ElementaryMagicians.Combat
         {
             if(other.TryGetComponent<IDamageDealer>(out IDamageDealer damageDealer))
             {
-                DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
-                if(damageDealerData == null || damageDealerData.DealerType.IndividualDealers)
+                if(damageDealer.Owner == null || damageDealer.Owner.TeamIndex != m_owner.TeamIndex)
                 {
-                    damageDealerData = new DamageDealerData();
-                    damageDealerData.DealerType = damageDealer.DealerType;
-                    damageDealerData.DamageDealers.Add(damageDealer);
-                    damageDealer.OnDestroy += OnDamageDealerDestroyed;
-                    m_damageDealerDatas.Add(damageDealerData);
-                }
-                else
-                {
-                    if(!damageDealerData.DamageDealers.Contains(damageDealer))
+                    DamageDealerData damageDealerData = m_damageDealerDatas.Find(x => x.DealerType == damageDealer.DealerType);
+                    if (damageDealerData == null || damageDealerData.DealerType.IndividualDealers)
                     {
+                        damageDealerData = new DamageDealerData();
+                        damageDealerData.DealerType = damageDealer.DealerType;
                         damageDealerData.DamageDealers.Add(damageDealer);
+                        damageDealer.OnDestroy += OnDamageDealerDestroyed;
+                        m_damageDealerDatas.Add(damageDealerData);
                     }
+                    else
+                    {
+                        if (!damageDealerData.DamageDealers.Contains(damageDealer))
+                        {
+                            damageDealerData.DamageDealers.Add(damageDealer);
+                            damageDealer.OnDestroy += OnDamageDealerDestroyed;
+                        }
+                    }
+                    m_collidingDamageDealers.Add(damageDealer);
                 }
-                m_collidingDamageDealers.Add(damageDealer);
+                
             }
         }
 

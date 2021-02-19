@@ -277,6 +277,9 @@ MonoBehaviour:
   m_positionTargetsManager: {fileID: 1191260518985724474}
   m_magiciansManager: {fileID: 8563818394924393644}
   m_combatController: {fileID: 4085202951377042343}
+  m_cursorLayerMask:
+    serializedVersion: 2
+    m_Bits: 2816
 --- !u!114 &4085202951377042343
 MonoBehaviour:
   m_ObjectHideFlags: 0

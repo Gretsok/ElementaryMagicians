@@ -10,6 +10,7 @@ namespace ElementaryMagicians.Player
         private Transform m_teamTargetPosition = null;
         [SerializeField]
         private float m_speed = 5f;
+        private float m_baseSpeed = 5f;
         [SerializeField]
         private LayerMask m_movingMask = 1;
         private Vector3 m_direction = Vector3.zero;
@@ -31,12 +32,28 @@ namespace ElementaryMagicians.Player
         private CombatController m_combatController = null;
         internal CombatController CombatController => m_combatController;
 
+        [SerializeField]
+        private LayerMask m_cursorLayerMask = 1;
+
+        private Vector3 m_worldCursorPosition = Vector3.zero;
+        internal Vector3 WorldCursorPosition => m_worldCursorPosition;
+
+        private delegate void MoveMethod();
+        private MoveMethod m_move = null;
+
+        #region SpecificBehaviours Attributes
+        private Vector3 m_dashingDirection = Vector3.zero;
+
+        #endregion
+
         private void Start()
         {
             m_actions = new PlayerInputsActions();
             m_actions.Enable();
             m_combatController.Init();
             RegisterInputs();
+            m_move = NormallyMove;
+            m_baseSpeed = m_speed;
         }
 
         private void RegisterInputs()
@@ -110,12 +127,12 @@ namespace ElementaryMagicians.Player
         public void DoFixedUpdate()
         {
             SetDirection();
-            Move();
+            m_move();
             foreach(MagicianController mage in m_magiciansManager.Magicians)
             {
                 mage.DoFixedUpdate();
             }
-            m_combatController.DoUpdate();
+            
         }
 
         public void DoLateUpdate()
@@ -124,6 +141,7 @@ namespace ElementaryMagicians.Player
             {
                 mage.DoLateUpdate();
             }
+
         }
 
         public void DoUpdate()
@@ -132,8 +150,72 @@ namespace ElementaryMagicians.Player
             {
                 mage.DoUpdate();
             }
+            m_combatController.DoUpdate();
+            ManageWorldCursorPosition();
         }
 
+        private void ManageWorldCursorPosition()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out RaycastHit hit, 100f, m_cursorLayerMask))
+            {
+                m_worldCursorPosition = hit.point;
+            }
+        }
+
+        #region FXPlaying
+        internal void GetWaterHealed()
+        {
+            foreach(MagicianController mage in m_magiciansManager.Magicians)
+            {
+                mage.FXManager.GetWaterHealed();
+            }
+        }
+
+        internal void StartDash()
+        {
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
+            {
+                mage.FXManager.EnableDash();
+            }
+        }
+
+        internal void StopDash()
+        {
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
+            {
+                mage.FXManager.DisableDash();
+            }
+        }
+        #endregion
+
+        #region Magicians Common Actions
+        internal void Dash(Vector3 directionPoint, float dashSpeed, float dashDuration)
+        {
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
+            {
+                mage.transform.LookAt(directionPoint);
+                mage.Agent.speed = dashSpeed;
+            }
+            m_baseSpeed = m_speed;
+            m_speed = dashSpeed;
+            m_move = DashingMove;
+            m_dashingDirection = (directionPoint - m_teamTargetPosition.transform.position).normalized;
+            Invoke("EndDash", dashDuration);
+            StartDash();
+        }
+
+        private void EndDash()
+        {
+            foreach (MagicianController mage in m_magiciansManager.Magicians)
+            {
+                mage.Agent.speed = m_baseSpeed;
+            }
+            m_speed = m_baseSpeed;
+            m_move = NormallyMove;
+            StopDash();
+        }
+        #endregion
 
         #region Magicians Management
         public void AddMagician(MageData mageData)
@@ -179,7 +261,7 @@ namespace ElementaryMagicians.Player
             m_teamTargetPosition.position = position;
         }
 
-        private void Move()
+        private void NormallyMove()
         {
 
             if (Physics.Raycast(m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
@@ -203,6 +285,21 @@ namespace ElementaryMagicians.Player
         m_teamTargetPosition.position + m_direction * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f + Vector3.down * 3f,
         Color.blue, 10f);
 
+            }
+        }
+
+        private void DashingMove()
+        {
+            if (Physics.Raycast(m_teamTargetPosition.position + m_dashingDirection * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
+                Vector3.down, out m_nextPositionInfos, 3f, m_movingMask))
+            {
+                m_teamTargetPosition.position = m_nextPositionInfos.point;
+            }
+            else if (Physics.SphereCast(m_teamTargetPosition.position + m_dashingDirection * m_speed * Time.fixedDeltaTime + Vector3.up * 1.5f,
+                0.5f,
+                Vector3.down, out m_nextPositionInfos, 3f, m_movingMask))
+            {
+                m_teamTargetPosition.position = m_nextPositionInfos.point;
             }
         }
         #endregion
