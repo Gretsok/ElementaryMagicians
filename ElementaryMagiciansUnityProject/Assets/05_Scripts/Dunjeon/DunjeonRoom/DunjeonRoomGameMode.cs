@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace ElementaryMagicians.Dunjeon
 {
-    public class DunjeonRoomGameMode : MainStatesMachine
+    public class DunjeonRoomGameMode : PauseableStateMachine
     {
         [Header("Room's generation parameters")]
         [SerializeField]
@@ -419,6 +419,32 @@ namespace ElementaryMagicians.Dunjeon
             {
                 m_ennemyTotalMaxLifePoints += Ennemies[i].CombatController.MaxLifePoints;
             }
+            OnPause += OnPaused;
+            OnUnpause += OnUnpaused;
+            m_magicianTeamController.Actions.Generic.TogglePause.performed += TogglePause_performed; ;
+        }
+
+        private void TogglePause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if(IsPaused)
+            {
+                Unpause();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+
+        private void OnPaused()
+        {
+            m_magicianTeamController.UnregisterInputs();
+        }
+
+
+        private void OnUnpaused()
+        {
+            m_magicianTeamController.RegisterInputs();
         }
 
         public override void DoLateUpdate()
@@ -462,6 +488,13 @@ namespace ElementaryMagicians.Dunjeon
         internal void Lose()
         {
             SwitchToState(m_loseState);
+        }
+
+        internal override void ExitStateMachine()
+        {
+            OnPause -= OnPaused;
+            OnUnpause -= OnUnpaused;
+            base.ExitStateMachine();
         }
     }
 }

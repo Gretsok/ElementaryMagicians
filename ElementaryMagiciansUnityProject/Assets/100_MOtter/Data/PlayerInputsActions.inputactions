@@ -215,6 +215,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Generic",
+            "id": "07e4799b-1630-41f9-9ea6-178181abe909",
+            "actions": [
+                {
+                    "name": "TogglePause",
+                    "type": "Button",
+                    "id": "ff564b29-9830-4d60-b8e9-5be24f3eb378",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b90f259c-9188-4c49-882c-f1bb3ac10238",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TogglePause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

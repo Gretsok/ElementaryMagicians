@@ -20,6 +20,7 @@ namespace ElementaryMagicians.Player
 
         #region Inputs
         private PlayerInputsActions m_actions = null;
+        public PlayerInputsActions Actions => m_actions;
         private Vector2 m_directionInputs = Vector2.zero;
 
         #endregion
@@ -69,7 +70,7 @@ namespace ElementaryMagicians.Player
             m_baseSpeed = m_speed;
         }
 
-        private void RegisterInputs()
+        public void RegisterInputs()
         {
             m_actions.Gameplay.FirstMage.performed += FirstMage_performed;
             m_actions.Gameplay.SecondMage.performed += SecondMage_performed;
@@ -78,6 +79,17 @@ namespace ElementaryMagicians.Player
             m_actions.Gameplay.FifthMage.performed += FifthMage_performed;
             m_actions.Gameplay.SixthMage.performed += SixthMage_performed;
             m_actions.Gameplay.SeventhMAge.performed += SeventhMAge_performed;
+        }
+
+        public void UnregisterInputs()
+        {
+            m_actions.Gameplay.FirstMage.performed -= FirstMage_performed;
+            m_actions.Gameplay.SecondMage.performed -= SecondMage_performed;
+            m_actions.Gameplay.ThirdMage.performed -= ThirdMage_performed;
+            m_actions.Gameplay.FourthMage.performed -= FourthMage_performed;
+            m_actions.Gameplay.FifthMage.performed -= FifthMage_performed;
+            m_actions.Gameplay.SixthMage.performed -= SixthMage_performed;
+            m_actions.Gameplay.SeventhMAge.performed -= SeventhMAge_performed;
         }
 
         #region Magicians Attacks

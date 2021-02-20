@@ -228,6 +228,33 @@ public class @PlayerInputsActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Generic"",
+            ""id"": ""07e4799b-1630-41f9-9ea6-178181abe909"",
+            ""actions"": [
+                {
+                    ""name"": ""TogglePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff564b29-9830-4d60-b8e9-5be24f3eb378"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b90f259c-9188-4c49-882c-f1bb3ac10238"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TogglePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -242,6 +269,9 @@ public class @PlayerInputsActions : IInputActionCollection, IDisposable
         m_Gameplay_FifthMage = m_Gameplay.FindAction("FifthMage", throwIfNotFound: true);
         m_Gameplay_SixthMage = m_Gameplay.FindAction("SixthMage", throwIfNotFound: true);
         m_Gameplay_SeventhMAge = m_Gameplay.FindAction("SeventhMAge", throwIfNotFound: true);
+        // Generic
+        m_Generic = asset.FindActionMap("Generic", throwIfNotFound: true);
+        m_Generic_TogglePause = m_Generic.FindAction("TogglePause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -376,6 +406,39 @@ public class @PlayerInputsActions : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Generic
+    private readonly InputActionMap m_Generic;
+    private IGenericActions m_GenericActionsCallbackInterface;
+    private readonly InputAction m_Generic_TogglePause;
+    public struct GenericActions
+    {
+        private @PlayerInputsActions m_Wrapper;
+        public GenericActions(@PlayerInputsActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TogglePause => m_Wrapper.m_Generic_TogglePause;
+        public InputActionMap Get() { return m_Wrapper.m_Generic; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GenericActions set) { return set.Get(); }
+        public void SetCallbacks(IGenericActions instance)
+        {
+            if (m_Wrapper.m_GenericActionsCallbackInterface != null)
+            {
+                @TogglePause.started -= m_Wrapper.m_GenericActionsCallbackInterface.OnTogglePause;
+                @TogglePause.performed -= m_Wrapper.m_GenericActionsCallbackInterface.OnTogglePause;
+                @TogglePause.canceled -= m_Wrapper.m_GenericActionsCallbackInterface.OnTogglePause;
+            }
+            m_Wrapper.m_GenericActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @TogglePause.started += instance.OnTogglePause;
+                @TogglePause.performed += instance.OnTogglePause;
+                @TogglePause.canceled += instance.OnTogglePause;
+            }
+        }
+    }
+    public GenericActions @Generic => new GenericActions(this);
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -386,5 +449,9 @@ public class @PlayerInputsActions : IInputActionCollection, IDisposable
         void OnFifthMage(InputAction.CallbackContext context);
         void OnSixthMage(InputAction.CallbackContext context);
         void OnSeventhMAge(InputAction.CallbackContext context);
+    }
+    public interface IGenericActions
+    {
+        void OnTogglePause(InputAction.CallbackContext context);
     }
 }

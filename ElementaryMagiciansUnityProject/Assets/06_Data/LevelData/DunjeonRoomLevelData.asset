@@ -17,7 +17,7 @@ MonoBehaviour:
     m_SceneName: DunjeonRoom
   m_additionalScenes: []
   m_loadingScreen:
-    m_SceneAsset: {fileID: 0}
-    m_SceneName: 
+    m_SceneAsset: {fileID: 102900000, guid: 3f439ce7f7cbd8242a5d088d545e88d1, type: 3}
+    m_SceneName: LoadingScreenScene
   m_levelName: 
   m_defaultLoadMode: 0
