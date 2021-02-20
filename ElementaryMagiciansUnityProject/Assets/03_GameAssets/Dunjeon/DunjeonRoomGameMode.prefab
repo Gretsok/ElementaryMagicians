@@ -277,3 +277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
   m_panels: []
+  m_timeToWait: 5
+  m_mainMenuScenedata: {fileID: 11400000, guid: 5791eabd6a47dce41946cf9ef7401815,
+    type: 2}

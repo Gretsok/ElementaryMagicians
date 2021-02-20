@@ -650,6 +650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
       propertyPath: m_enterDoors
       value: 
       objectReference: {fileID: 1126694640}
@@ -666,42 +671,42 @@ PrefabInstance:
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
@@ -713,6 +718,22 @@ PrefabInstance:
       propertyPath: m_doorAlertsWidget
       value: 
       objectReference: {fileID: 1990552046}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.data[4].NumberOfEnnemiesToSpawn.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.data[4].NumberOfEnnemiesToSpawn.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
+        type: 3}
+      propertyPath: m_ennemiesToSpawnData.Array.data[4].EnnemyToSpawnPrefab
+      value: 
+      objectReference: {fileID: 8167433585361680913, guid: ac45a154ed7f5864a990f53d6f9a9492,
+        type: 3}
     - target: {fileID: 4057541407004162514, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_panels.Array.size

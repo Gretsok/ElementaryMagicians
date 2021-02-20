@@ -39,6 +39,12 @@ namespace ElementaryMagicians.Dunjeon
             return m_teamController;
         }
 
+        internal static void DestroyDunjeonManager()
+        {
+            Destroy(s_instance.gameObject);
+            s_instance = null;
+        }
+
         private int m_numberOfRoomsPassed = 0;
         internal int NumberOfRoomsPassed => m_numberOfRoomsPassed;
 

@@ -488,6 +488,7 @@ namespace ElementaryMagicians.Dunjeon
         internal void Lose()
         {
             SwitchToState(m_loseState);
+            DunjeonManager.DestroyDunjeonManager();
         }
 
         internal override void ExitStateMachine()
