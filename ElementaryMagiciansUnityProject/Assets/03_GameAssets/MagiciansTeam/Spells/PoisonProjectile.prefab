@@ -80,7 +80,7 @@ MonoBehaviour:
   m_speed: 8
   m_groundMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2560
   m_poisonAreaPrefab: {fileID: 4710397521489959707, guid: 8895225b8473eb54e92f587b62ed2f2b,
     type: 3}
 --- !u!1001 &3639137195045664380
