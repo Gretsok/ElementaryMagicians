@@ -9,8 +9,8 @@ namespace ElementaryMagicians.Player
         private int SPEEDRATIO = Animator.StringToHash("SpeedRatio");
         private int STARTPRIMARYATTACK = Animator.StringToHash("StartPrimaryAttack");
         private int STOPPRIMARYATTACK = Animator.StringToHash("StopPrimaryAttack");
-        private int STARTSECONDARYATTACK = Animator.StringToHash("StartSecondaryAttack");
-        private int STOPSECONDARYATTACK = Animator.StringToHash("StopSecondaryAttack");
+        /*private int STARTSECONDARYATTACK = Animator.StringToHash("StartSecondaryAttack");
+        private int STOPSECONDARYATTACK = Animator.StringToHash("StopSecondaryAttack");*/
 
         [SerializeField]
         private Animator m_animator = null;
@@ -22,7 +22,14 @@ namespace ElementaryMagicians.Player
 
         internal void PrimaryAttack()
         {
+            StartCoroutine(PrimaryAttackRoutine(0.5f));
+        }
 
+        IEnumerator PrimaryAttackRoutine(float timeToKeep)
+        {
+            m_animator.SetTrigger(STARTPRIMARYATTACK);
+            yield return new WaitForSeconds(timeToKeep);
+            m_animator.SetTrigger(STOPPRIMARYATTACK);
         }
 
         internal void SecondaryAttack()

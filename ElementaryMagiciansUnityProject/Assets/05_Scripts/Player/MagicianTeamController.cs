@@ -8,6 +8,7 @@ namespace ElementaryMagicians.Player
     {
         [SerializeField]
         private Transform m_teamTargetPosition = null;
+        internal Transform TeamTargetPosition => m_teamTargetPosition;
         [SerializeField]
         private float m_speed = 5f;
         private float m_baseSpeed = 5f;

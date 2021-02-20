@@ -95,6 +95,7 @@ namespace ElementaryMagicians.Player
                 throw new OnCooldownException();
             }
             m_cooldown = m_primaryAttackCooldown;
+            //m_animationsHandler.PrimaryAttack();
         }
 
         internal virtual void SecondaryAttack()

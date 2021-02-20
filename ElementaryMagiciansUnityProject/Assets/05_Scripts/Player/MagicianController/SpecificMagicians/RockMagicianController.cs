@@ -14,7 +14,7 @@ namespace ElementaryMagicians.Player
             {
                 base.PrimaryAttack();
                 RockWall rockWall = Instantiate(m_rockWallPrefab, m_teamController.WorldCursorPosition, Quaternion.identity);
-                rockWall.transform.LookAt(m_teamController.WorldCursorPosition + (m_teamController.WorldCursorPosition - transform.position));
+                rockWall.transform.LookAt(m_teamController.WorldCursorPosition + (m_teamController.WorldCursorPosition - m_teamController.TeamTargetPosition.position));
             }
             catch (System.Exception e)
             {
