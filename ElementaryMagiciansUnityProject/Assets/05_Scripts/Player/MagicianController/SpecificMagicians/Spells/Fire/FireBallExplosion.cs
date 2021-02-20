@@ -11,6 +11,8 @@ namespace ElementaryMagicians.Player
         private bool m_hasStartedExploding = false;
         private float m_distanceTravelled = 0f;
         private float m_distanceToTravel = 10f;
+        private bool m_explosionEnded = false;
+        public bool ExplosionEnded => m_explosionEnded;
 
         private CombatController m_owner = null;
         public CombatController Owner => m_owner;
@@ -35,12 +37,13 @@ namespace ElementaryMagicians.Player
             {
                 if (m_distanceToTravel > m_distanceTravelled)
                 {
-                    Vector3 velocity = Vector3.up * 15f * Time.fixedDeltaTime;
+                    Vector3 velocity =  Vector3.up * 15f * Time.fixedDeltaTime;
                     transform.position += velocity;
                     m_distanceTravelled += velocity.magnitude;
                 }
                 else
                 {
+                    m_explosionEnded = true;
                     GetComponentInParent<Transform>().gameObject.SetActive(false);
                     OnDisappeared?.Invoke(this);
                 }

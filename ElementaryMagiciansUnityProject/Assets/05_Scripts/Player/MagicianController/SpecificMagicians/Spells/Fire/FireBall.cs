@@ -50,9 +50,13 @@ namespace ElementaryMagicians.Player
             }
             else if(m_touchedSomething)
             {
-                m_onDestroy?.Invoke(this);
                 m_explosion.DoFixedUpdate();
-                m_touchedSomething = false;
+            }
+
+            if(m_explosion.ExplosionEnded)
+            {
+                m_onDestroy?.Invoke(this);
+                Destroy(gameObject);
             }
         }
 

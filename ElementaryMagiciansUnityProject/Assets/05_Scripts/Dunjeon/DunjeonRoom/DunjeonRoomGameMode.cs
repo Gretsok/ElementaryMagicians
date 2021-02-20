@@ -71,12 +71,15 @@ namespace ElementaryMagicians.Dunjeon
         [System.Serializable]
         struct EnnemyToSpawnData
         {
-            public Vector2Int NumberOfEnnemiesToSpawn;
+            public int Weight;
             public Ennemy.EnnemyAI EnnemyToSpawnPrefab;
         }
         [Header("Ennemies To Spawn")]
         [SerializeField]
         private List<EnnemyToSpawnData> m_ennemiesToSpawnData = new List<EnnemyToSpawnData>();
+        [SerializeField]
+        private Vector2Int m_numberOfEnnemiesToSpawn = Vector2Int.zero;
+
 
         private List<Ennemy.EnnemyAI> m_ennemies = new List<Ennemy.EnnemyAI>();
         internal List<Ennemy.EnnemyAI> Ennemies => m_ennemies;
@@ -144,6 +147,8 @@ namespace ElementaryMagicians.Dunjeon
         public override IEnumerator LoadAsync()
         {
             yield return null;
+
+            Random.InitState((new System.Random((int)(Time.time * GetHashCode())).Next(-446456, 45646)));
 
             #region room generation
             int lastWidth = -1;
@@ -379,15 +384,33 @@ namespace ElementaryMagicians.Dunjeon
             InstantiatePlayer();
             yield return null;
             #region Spawning Ennemies
-            for (int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
+            Random.InitState((new System.Random((int)(Time.time * GetHashCode())).Next(-327577, 7872725)));
+            int numberOfEnnemiesToSpawn = Random.Range(m_numberOfEnnemiesToSpawn.x, m_numberOfEnnemiesToSpawn.y);
+            int totalWeight = 0;
+            for(int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
             {
-                int numberOfEnnemiesToSpawn = Random.Range(m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.x, m_ennemiesToSpawnData[i].NumberOfEnnemiesToSpawn.y);
-                for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
-                {
-                    TileData tileToSpawnOn = GetGroundTile();
-                    m_ennemies.Add(Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity));
-                }
+                totalWeight += m_ennemiesToSpawnData[i].Weight;
             }
+            yield return null;
+            for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
+            {
+                Random.InitState((new System.Random((int)(Time.time * m_doorAlertsWidget.GetHashCode())).Next(-1654949,4264654)));
+                int randomWeight = Random.Range(1, totalWeight + 1);
+                int tempWeight = 0;
+                EnnemyToSpawnData ennemySpawnData;
+                for (int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
+                {
+                    tempWeight += m_ennemiesToSpawnData[i].Weight;
+                    if (tempWeight >= randomWeight)
+                    {
+                        TileData tileToSpawnOn = GetGroundTile();
+                        m_ennemies.Add(Instantiate(m_ennemiesToSpawnData[i].EnnemyToSpawnPrefab, tileToSpawnOn.Position + Vector3.up, Quaternion.identity));
+                        break;
+                    }
+                }
+                yield return null;
+            }
+            
             #endregion
             yield return null;
 
