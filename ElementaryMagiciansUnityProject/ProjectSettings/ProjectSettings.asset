@@ -16,7 +16,7 @@ PlayerSettings:
   productName: ' Elemental Magicians'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.4716981, g: 0.2030335, b: 0.08677466, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.6981132, g: 0.08684471, b: 0.009878943, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1

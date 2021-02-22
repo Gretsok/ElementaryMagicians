@@ -148,7 +148,7 @@ namespace ElementaryMagicians.Dunjeon
         {
             yield return null;
 
-            Random.InitState((new System.Random((int)(Time.time * GetHashCode())).Next(-446456, 45646)));
+            Random.InitState((new System.Random((int)(Time.time * GetHashCode() * Random.Range(-1000, 1000))).Next(-446456, 45646)));
 
             #region room generation
             int lastWidth = -1;
@@ -384,7 +384,6 @@ namespace ElementaryMagicians.Dunjeon
             InstantiatePlayer();
             yield return null;
             #region Spawning Ennemies
-            Random.InitState((new System.Random((int)(Time.time * GetHashCode())).Next(-327577, 7872725)));
             int numberOfEnnemiesToSpawn = Random.Range(m_numberOfEnnemiesToSpawn.x, m_numberOfEnnemiesToSpawn.y);
             int totalWeight = 0;
             for(int i = 0; i < m_ennemiesToSpawnData.Count; ++i)
@@ -394,7 +393,6 @@ namespace ElementaryMagicians.Dunjeon
             yield return null;
             for(int j = 0; j < numberOfEnnemiesToSpawn; ++j)
             {
-                Random.InitState((new System.Random((int)(Time.time * m_doorAlertsWidget.GetHashCode())).Next(-1654949,4264654)));
                 int randomWeight = Random.Range(1, totalWeight + 1);
                 int tempWeight = 0;
                 EnnemyToSpawnData ennemySpawnData;
@@ -414,7 +412,6 @@ namespace ElementaryMagicians.Dunjeon
             #endregion
             yield return null;
 
-            Random.InitState((new System.Random(GetHashCode() * (int) Time.time).Next(-100000, 10000)));
             int randomPercentToSpawnMagePrison = Random.Range(1, 101);
             Debug.Log("PRISON SPAWNING: " + randomPercentToSpawnMagePrison + " for " + m_magePrisonChanceToSpawnInPercent);
             if(randomPercentToSpawnMagePrison < m_magePrisonChanceToSpawnInPercent)

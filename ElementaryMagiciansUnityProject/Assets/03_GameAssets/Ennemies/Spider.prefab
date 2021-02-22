@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxLifePoints: 1000
   m_teamIndex: 0
-  m_difficultyLifeFactor: 0.12
+  m_difficultyLifeFactor: 0.1
 --- !u!1 &8167433585611284322
 GameObject:
   m_ObjectHideFlags: 0
