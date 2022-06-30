@@ -148,8 +148,6 @@ namespace ElementaryMagicians.Dunjeon
         {
             yield return null;
 
-            Random.InitState((new System.Random((int)(Time.time * GetHashCode() * Random.Range(-1000, 1000))).Next(-446456, 45646)));
-
             #region room generation
             int lastWidth = -1;
             for(int i = 0; i < m_roomLength; ++i)

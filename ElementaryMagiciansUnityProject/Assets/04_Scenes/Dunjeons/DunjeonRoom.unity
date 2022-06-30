@@ -570,19 +570,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3385968780957664449, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
-      propertyPath: m_panels.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385968780957664449, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
       propertyPath: m_panels.Array.data[0]
       value: 
       objectReference: {fileID: 7768063638161779821}
-    - target: {fileID: 3418638541076165845, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_panels.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3418638541076165845, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_panels.Array.data[0]
@@ -650,11 +640,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
       propertyPath: m_enterDoors
       value: 
       objectReference: {fileID: 1126694640}
@@ -670,46 +655,6 @@ PrefabInstance:
       objectReference: {fileID: 564677096}
     - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[1].NumberOfEnnemiesToSpawn.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[2].NumberOfEnnemiesToSpawn.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[3].NumberOfEnnemiesToSpawn.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[0].NumberOfEnnemiesToSpawn.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
       propertyPath: m_saveMeWidget
       value: 
       objectReference: {fileID: 7768063638161779820}
@@ -718,62 +663,6 @@ PrefabInstance:
       propertyPath: m_doorAlertsWidget
       value: 
       objectReference: {fileID: 1990552046}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[4].NumberOfEnnemiesToSpawn.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[4].NumberOfEnnemiesToSpawn.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[4].EnnemyToSpawnPrefab
-      value: 
-      objectReference: {fileID: 8167433585361680913, guid: ac45a154ed7f5864a990f53d6f9a9492,
-        type: 3}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[4].Weight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[3].Weight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_numberOfEnnemiesToSpawn.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_numberOfEnnemiesToSpawn.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[2].Weight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[0].Weight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541406750090987, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_ennemiesToSpawnData.Array.data[1].Weight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057541407004162514, guid: d56690a26abca664d8eeb749fc7faed4,
-        type: 3}
-      propertyPath: m_panels.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4057541407004162514, guid: d56690a26abca664d8eeb749fc7faed4,
         type: 3}
       propertyPath: m_panels.Array.data[0]
@@ -1093,6 +982,21 @@ PrefabInstance:
     - target: {fileID: 8445077530670264642, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
+        type: 3}
+      propertyPath: m_OverrideVoxelSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
+        type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445077530670264643, guid: c20a91e7c55cb1c4282b99fafd8a1c86,
+        type: 3}
+      propertyPath: m_DefaultArea
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

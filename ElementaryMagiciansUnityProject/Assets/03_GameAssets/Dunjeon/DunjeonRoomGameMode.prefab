@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
-  m_panels: []
+  m_panels:
+  - {fileID: 0}
 --- !u!1 &1182141524379809886
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,25 +163,29 @@ MonoBehaviour:
   m_sizeOfLavaHoles: {x: 2, y: 4}
   m_numberOfSpikesSpot: {x: 1, y: 2}
   m_sizeOfSpikesSpot: {x: 4, y: 6}
-  m_numberOfVoidHoles: {x: 1, y: 2}
+  m_numberOfVoidHoles: {x: 0, y: 0}
   m_sizeOfVoidHoles: {x: 2, y: 4}
   m_magePrisonPrefab: {fileID: 7788023610341835007, guid: dd66d9ea3bde0c04eab87cc967f37675,
     type: 3}
   m_magePrisonChanceToSpawnInPercent: 60
   m_loseState: {fileID: 3418638541076165845}
   m_ennemiesToSpawnData:
-  - NumberOfEnnemiesToSpawn: {x: 2, y: 4}
+  - Weight: 10
     EnnemyToSpawnPrefab: {fileID: 7360265576023085507, guid: d192bf5b3bb12914cba148dd91e9a218,
       type: 3}
-  - NumberOfEnnemiesToSpawn: {x: 1, y: 3}
+  - Weight: 10
     EnnemyToSpawnPrefab: {fileID: 1759823326020389925, guid: d3b805a7eafc19a4081a5dbd3939a920,
       type: 3}
-  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+  - Weight: 20
     EnnemyToSpawnPrefab: {fileID: 1371183291684993931, guid: 7f5e9dff11948544ca78cab95b350a49,
       type: 3}
-  - NumberOfEnnemiesToSpawn: {x: 2, y: 5}
+  - Weight: 20
     EnnemyToSpawnPrefab: {fileID: 8914587936295203618, guid: d531488b7ebb5e84dbe90dda0f914faa,
       type: 3}
+  - Weight: 1
+    EnnemyToSpawnPrefab: {fileID: 8167433585361680913, guid: ac45a154ed7f5864a990f53d6f9a9492,
+      type: 3}
+  m_numberOfEnnemiesToSpawn: {x: 10, y: 15}
   m_magicianTeamPrefab: {fileID: 1191260518151959622, guid: 333ae75854bb65842bfd6d314455300a,
     type: 3}
   m_roomSceneData: {fileID: 11400000, guid: 858a2cfdeb6101945b83ee7a8c06302c, type: 2}
@@ -232,6 +237,8 @@ MonoBehaviour:
   m_nextState: {fileID: 0}
   m_panels:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4868817127386688363
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nextState: {fileID: 0}
-  m_panels: []
+  m_panels:
+  - {fileID: 0}
   m_timeToWait: 5
   m_mainMenuScenedata: {fileID: 11400000, guid: 5791eabd6a47dce41946cf9ef7401815,
     type: 2}
